@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-10T07:38:40.636Z",
+  "generatedAt": "2026-10-10T07:45:40.168Z",
   "count": 104,
   "items": [
     {
@@ -811,7 +811,7 @@
       "id": "nu3qwqy2kcjvq8ncxx44unb3f",
       "title": "X射线自由电子激光锁模频率梳的演示",
       "originalTitle": "Demonstration of mode-locked frequency comb for an X-ray free-electron laser",
-      "summary": "作者报告了锁模SASE的首次实验演示，产生相位锁定的亚飞秒脉冲周期串，为X射线提供了光学频率梳的类比。该方法结合模式耦合SASE方案（在FEL波荡器模块之间加入磁扭摆器以提高输出辐射相干性）与外部光学激光，将FEL放大限制在电子束团的周期性短区域。工作分别依赖频域（光子）和时域（电子）证据，作者称其将有助于超快动力学与相干光谱研究，并支持需要相位相关X射线脉冲的新型实验。",
+      "summary": "作者报告了锁模SASE的首次实验演示，产生相位锁定的亚飞秒脉冲周期串，为X射线提供了光学频率梳的类比。该方法结合模式耦合SASE方案（在FEL波荡器模块之间加入磁色散段（chicane）以提高输出辐射相干性）与外部光学激光，将FEL放大限制在电子束团的周期性短区域。工作分别依赖频域（光子）和时域（电子）证据，作者称其将有助于超快动力学与相干光谱研究，并支持需要相位相关X射线脉冲的新型实验。",
       "source": "SwissFEL publications",
       "tags": [
         "论文/研究",
@@ -2943,7 +2943,7 @@
       "id": "bvwa6xs6ld8ukeyjtz7ru3voz",
       "title": "利用光学速调管效应演示紧凑型X射线自由电子激光",
       "originalTitle": "Demonstration of a compact x-ray free-electron laser using the optical klystron effect",
-      "summary": "作者在SwissFEL的软X射线光束线Athos上演示了利用光学速调管机制的紧凑型X射线自由电子激光运行，该效应借助波荡器模块间磁减速器的色散加速FEL过程。测量显示，在1至2 nm辐射波长范围内，相比无减速器的标准运行，达到FEL饱和所需的波荡器长度缩短了15%至30%。",
+      "summary": "作者在SwissFEL的软X射线光束线Athos上演示了利用光学速调管机制的紧凑型X射线自由电子激光运行，该效应借助波荡器模块间磁色散段（chicane）的色散加速FEL过程。测量显示，在1至2 nm辐射波长范围内，相比无chicane的标准运行，达到FEL饱和所需的波荡器长度缩短了15%至30%。",
       "source": "SwissFEL publications",
       "tags": [
         "论文/研究",
