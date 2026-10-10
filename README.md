@@ -17,3 +17,6 @@ The first publication's public use/privacy copy was confirmed by the owner; see 
 The page rendering and styling derive from AIHOT, MIT licensed, with FELTrace customization. AIHOT brand assets are not used. See LICENSE. Third-party papers, abstracts and licensed figures retain their own rights and attributions; the code license does not relicense their content.
 
 Formula markup, styles and fonts use KaTeX 0.19.0. Its MIT notice is retained in `licenses/KaTeX-LICENSE.txt` and the deployed `site/third-party/KaTeX-LICENSE.txt`.
+# Agent data snapshots
+
+The public `/agent/` page describes the capabilities of this static deployment. `/llms.txt` links to `/data/papers.json`, `/data/facilities.json`, `/data/selected.json` and the selected RSS feed. JSON snapshots include `schemaVersion`, `generatedAt`, `count` and public `items`; publication and discovery timestamps remain separate. Query/filter snapshots on the client. GitHub Pages does not host the local MCP or REST backend. Only already-public metadata, summaries and selected reading reasons are exported; restricted abstracts and article bodies are excluded.

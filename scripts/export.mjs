@@ -30,7 +30,8 @@ async function asset(raw){
  const pending=(async()=>{try{
    const digest=createHash('sha256').update(u.pathname+u.search).digest('hex').slice(0,20);
    const cached=previousAssets.find(n=>n.startsWith(digest+'.'));
-   if(cached){const name='assets/'+cached;await put(name,await readFile(path.join(ROOT,'site',name)));return base+name;}
+   // CSS must be traversed on every export: copying a cached sheet alone loses its font/image dependencies.
+   if(cached&&!cached.endsWith('.css')){const name='assets/'+cached;await put(name,await readFile(path.join(ROOT,'site',name)));return base+name;}
    const r=await get(u.pathname+u.search),type=r.headers.get('content-type')||'';
    const ext=type.includes('css')?'css':type.includes('svg')?'svg':type.includes('webp')?'webp':type.includes('png')?'png':type.includes('jpeg')?'jpg':type.includes('woff2')?'woff2':type.includes('woff')?'woff':type.includes('ttf')?'ttf':type.includes('icon')?'ico':'bin';
    const name=`assets/${createHash('sha256').update(u.pathname+u.search).digest('hex').slice(0,20)}.${ext}`;
@@ -51,7 +52,6 @@ function internal(raw){
  if(p==='/all')p='/papers';
  if(p==='/feed.xml')return base+'feed.xml';
  if(p.startsWith('/story/'))p='/papers';
- if(p==='/agent')p='/about';
  if(p==='/feedback')return 'https://github.com/Powell-Wu/feltrace/issues';
  if(p.startsWith('/admin')||p.startsWith('/api/')||p.startsWith('/codex-reset')||p.startsWith('/leaderboard')||p==='/hot')return base+'about/';
  if(p.endsWith('/original')){const id=p.split('/')[2];return itemMap.get(id)?.links?.original||base+`items/${id}/`;}
@@ -143,24 +143,31 @@ const stars=await clean(rawPages.get('/papers'),'/starred');
 stars('.academic-page').attr('data-stream','starred');stars('h1').first().text('我的收藏');stars('.academic-feed').empty();stars('nav[aria-label="分页"]').remove();
 await savePage('/starred',stars);
 const baseShell=rawPages.get('/papers');
-for(const name of ['terms','privacy','about']){
+for(const name of ['terms','privacy','about','agent']){
  const $=await clean(baseShell,'/'+name);
- const md=await readFile(path.join(ROOT,'copy',name+'.html'),'utf8');
+ const md=(await readFile(path.join(ROOT,'copy',name+'.html'),'utf8')).replaceAll('{{PUBLIC_BASE}}',base);
  $('#main>div').html(`<div class="static-status">FELTrace · 公开阅读预览</div>${md}<footer class="static-footer"><a href="${base}">返回精选</a><a href="${base}terms/">使用说明</a><a href="${base}privacy/">隐私说明</a></footer>`);
  $('#main a[href="/terms"]').attr('href',base+'terms/');$('#main a[href="/privacy"]').attr('href',base+'privacy/');
- $('title').text(({terms:'使用说明',privacy:'隐私说明',about:'关于 FELTrace'})[name]+' · FELTrace');
+ $('title').text(({terms:'使用说明',privacy:'隐私说明',about:'关于 FELTrace',agent:'Agent 接入'})[name]+' · FELTrace');
  await savePage('/'+name,$);
 }
 // Strip proxy URLs/signatures and export only search metadata already visible in cards.
 const index=publicItems.map(i=>({id:i.id,title:i.title,originalTitle:i.originalTitle,summary:i.summary,source:i.source.name,tags:i.tags,category:i.category,publishedAt:i.publishedAt,discoveredAt:i.discoveredAt,paper:i.paper?{authors:i.paper.authors,doi:i.paper.doi,arxivId:i.paper.arxivId}:null,selected:i.selected,stream:i.contentStream,original:i.links.original}));
 await put('data/index.json',JSON.stringify({generatedAt,items:index,cards:cleanCards},null,2));
+// Machine-readable static snapshots use the same public projection, never private abstracts or bodies.
+for(const [name,mode] of [['papers','paper'],['facilities','news'],['selected',null]]){
+ const items=publicItems.filter(i=>mode ? (mode==='paper'?i.contentStream==='paper':i.contentStream!=='paper') : i.selected)
+  .map(i=>({...index.find(record=>record.id===i.id),reason:i.reason??null,url:publicOrigin+base+`items/${i.id}/`}));
+ await put(`data/${name}.json`,JSON.stringify({schemaVersion:1,generatedAt,count:items.length,items},null,2));
+}
+await put('llms.txt',`# FELTrace\n\n自由电子激光光源与加速器论文和设施资讯索引。当前为静态阅读快照，读取不会触发模型。\n\n- [Agent 接入](${publicOrigin+base}agent/)\n- [论文 JSON](${publicOrigin+base}data/papers.json)\n- [设施资讯 JSON](${publicOrigin+base}data/facilities.json)\n- [精选 JSON](${publicOrigin+base}data/selected.json)\n- [精选 RSS](${publicOrigin+base}feed.xml)\n\nJSON 含 schemaVersion、generatedAt、count、items。publishedAt 为原文发表时间（可能未知），discoveredAt 为本站首次收录时间。reason 为精选阅读价值，summary 为中文导读，均非全文笔记。请在客户端检索/过滤；此静态站不提供远程 MCP 或 REST 查询服务。请通过 original 核对原始来源，勿推定未提供的论文正文或设施参数。\n`);
 for(const name of ['static.js','static.css'])await put(name,await readFile(path.join(ROOT,'src',name)));
 await put('third-party/KaTeX-LICENSE.txt',await readFile(path.join(ROOT,'licenses','KaTeX-LICENSE.txt')));
 const rssItems=publicItems.filter(i=>i.selected).map(i=>`<item><title>${escaped(i.title)}</title><link>${publicOrigin+base}items/${i.id}/</link><guid>${publicOrigin+base}items/${i.id}/</guid><description>${escaped(i.summary)}</description></item>`).join('');
 await put('feed.xml',`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>FELTrace · 学术精选</title><link>${publicOrigin+base}</link><description>自由电子激光光源与加速器研究索引</description>${rssItems}</channel></rss>`);
 await put('robots.txt',`User-agent: *\nDisallow: ${base}\n`);
 await put('.nojekyll','');
-const report={generatedAt,base,source:'existing public HTTP endpoints',papers:streams.papers.total,facilities:streams.facilities.total,selected:streams.selected.total,pages:extraRoutes.size+6,assets:assetCache.size,assetFailures:failures};
+const report={generatedAt,base,source:'existing public HTTP endpoints',papers:streams.papers.total,facilities:streams.facilities.total,selected:streams.selected.total,pages:extraRoutes.size+7,assets:assetCache.size,assetFailures:failures};
 await put('release.json',JSON.stringify(report,null,2));
 // Preserve the old successful export until the replacement has completed.
 const current=path.join(ROOT,'site'),backup=path.join(ROOT,'.preview','previous');await mkdir(path.dirname(backup),{recursive:true});

@@ -1,0 +1,11 @@
+<section class="static-copy"><p>公开阅读 · 机器可读数据</p><h1>Agent 接入</h1>
+<p>FELTrace 公网站提供自由电子激光论文与设施资讯的静态快照。Agent 可以读取以下 JSON 或 RSS，检索与时间过滤在客户端完成。读取页面或数据不会触发模型调用。</p>
+<h2>公开数据入口</h2><ul>
+<li><a href="{{PUBLIC_BASE}}data/papers.json">论文 · papers.json</a></li>
+<li><a href="{{PUBLIC_BASE}}data/facilities.json">设施资讯 · facilities.json</a></li>
+<li><a href="{{PUBLIC_BASE}}data/selected.json">学术精选 · selected.json</a></li>
+<li><a href="{{PUBLIC_BASE}}feed.xml">精选 RSS</a> · <a href="{{PUBLIC_BASE}}llms.txt">llms.txt 接入索引</a></li></ul>
+<h2>字段与使用方式</h2><p>JSON 顶层提供 schemaVersion、generatedAt、count、items。先检查 generatedAt，再按 DOI、arXiv ID、设施名称或标签检索 items。publishedAt 是资料的真实发表时间，可能为空；discoveredAt 是首次收录时间，不等同于新发表。</p>
+<p>summary 是中文导读，reason 是入选资料的具体阅读价值；均不代表已读全文。original 指向原始来源，url 指向本站阅读页。数据不包含受限制的摘要或论文正文；缺失信息不能从标题或导读补造。</p>
+<h2>MCP 与 REST</h2><p>本机运行版另有 MCP 和 REST 查询服务，可在本机 Agent 接入页查看配置。GitHub Pages 上的此公开阅读版不运行后端，因此没有远程 MCP 或动态 REST 服务。这里列出的 JSON 是可直接读取的静态文件。</p>
+<p>快照生成时间见 JSON 的 generatedAt。后续部署后端并核实访问、限流与运维配置，才会提供公网 MCP；目前请使用上述入口。</p></section>

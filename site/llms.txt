@@ -1,0 +1,11 @@
+# FELTrace
+
+自由电子激光光源与加速器论文和设施资讯索引。当前为静态阅读快照，读取不会触发模型。
+
+- [Agent 接入](https://powell-wu.github.io/feltrace/agent/)
+- [论文 JSON](https://powell-wu.github.io/feltrace/data/papers.json)
+- [设施资讯 JSON](https://powell-wu.github.io/feltrace/data/facilities.json)
+- [精选 JSON](https://powell-wu.github.io/feltrace/data/selected.json)
+- [精选 RSS](https://powell-wu.github.io/feltrace/feed.xml)
+
+JSON 含 schemaVersion、generatedAt、count、items。publishedAt 为原文发表时间（可能未知），discoveredAt 为本站首次收录时间。reason 为精选阅读价值，summary 为中文导读，均非全文笔记。请在客户端检索/过滤；此静态站不提供远程 MCP 或 REST 查询服务。请通过 original 核对原始来源，勿推定未提供的论文正文或设施参数。

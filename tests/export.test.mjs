@@ -19,3 +19,27 @@ test('The reported S³FEL source formula and selected-value disclosure survive s
  assert.match($('details').text(),/精选理由 · 展开阅读价值/);
  assert.ok($('link[rel="stylesheet"]').length>0);
 });
+test('Agent links reach a real capability page and projected static feeds',async()=>{
+ const $=load(await readFile(path.join(root,'agent/index.html'),'utf8'));
+ assert.match($('h1').text(),/Agent 接入/);
+ assert.match($('.static-copy').text(),/没有远程 MCP/);
+ const home=load(await readFile(path.join(root,'index.html'),'utf8'));
+ assert.ok(home('a[href="/feltrace/agent/"]').length);
+ const release=JSON.parse(await readFile(path.join(root,'release.json'),'utf8'));
+ for(const name of ['papers','facilities','selected']){
+  const feed=JSON.parse(await readFile(path.join(root,`data/${name}.json`),'utf8'));
+  assert.equal(feed.count,release[name]);assert.equal(feed.count,feed.items.length);assert.equal(feed.schemaVersion,1);
+  for(const item of feed.items){assert.ok(item.url.startsWith('https://powell-wu.github.io/feltrace/items/'));assert.ok(item.discoveredAt);assert.ok(Object.hasOwn(item,'publishedAt'));assert.equal(item.abstract,undefined);assert.equal(item.body,undefined);if(!item.selected)assert.equal(item.reason,null);}
+ }
+ assert.match(await readFile(path.join(root,'llms.txt'),'utf8'),/data\/papers.json/);
+});
+test('Every stylesheet dependency is copied on repeated exports',async()=>{
+ const styles=(await files()).filter(f=>f.endsWith('.css'));
+ for(const f of styles){const css=await readFile(f,'utf8');
+  for(const [,value] of css.matchAll(/url\(["']?([^)'"\s]+)["']?\)/g)){
+   if(value.startsWith('data:')||value.startsWith('https:'))continue;
+   assert.ok(value.startsWith('/feltrace/assets/'),value);
+   assert.ok((await stat(path.join(root,value.slice('/feltrace/'.length)))).isFile(),value);
+  }
+ }
+});
