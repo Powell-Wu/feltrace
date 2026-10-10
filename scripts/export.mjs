@@ -32,7 +32,7 @@ async function asset(raw){
    const cached=previousAssets.find(n=>n.startsWith(digest+'.'));
    if(cached){const name='assets/'+cached;await put(name,await readFile(path.join(ROOT,'site',name)));return base+name;}
    const r=await get(u.pathname+u.search),type=r.headers.get('content-type')||'';
-   const ext=type.includes('css')?'css':type.includes('svg')?'svg':type.includes('webp')?'webp':type.includes('png')?'png':type.includes('jpeg')?'jpg':type.includes('woff2')?'woff2':type.includes('icon')?'ico':'bin';
+   const ext=type.includes('css')?'css':type.includes('svg')?'svg':type.includes('webp')?'webp':type.includes('png')?'png':type.includes('jpeg')?'jpg':type.includes('woff2')?'woff2':type.includes('woff')?'woff':type.includes('ttf')?'ttf':type.includes('icon')?'ico':'bin';
    const name=`assets/${createHash('sha256').update(u.pathname+u.search).digest('hex').slice(0,20)}.${ext}`;
    if(ext==='css'){
     let css=await r.text();const refs=[...css.matchAll(/url\(["']?([^)'"\s]+)["']?\)/g)];

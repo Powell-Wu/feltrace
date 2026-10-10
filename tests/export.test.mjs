@@ -10,3 +10,12 @@ test('Public export contains every search record and both real clocks',async()=>
 test('Every exported HTML link and asset stays within the deployed project path',async()=>{const errors=[];for(const f of (await files()).filter(f=>f.endsWith('.html'))){const $=load(await readFile(f,'utf8'));for(const el of $('[href],[src]').toArray()){const value=$(el).attr('href')||$(el).attr('src');if(!value||value.startsWith('#')||/^(https?:|mailto:|data:)/.test(value))continue;if(!value.startsWith('/feltrace/')){errors.push(`${path.relative(root,f)}: ${value}`);continue}let dest=path.join(root,new URL(value,'https://example.com').pathname.slice('/feltrace/'.length));try{if((await stat(dest)).isDirectory())dest=path.join(dest,'index.html');await stat(dest)}catch{errors.push(`${path.relative(root,f)}: ${value}`)}}}assert.deepEqual(errors,[])});
 test('No local service, proxy signatures, backend endpoint or hydration bundle is shipped',async()=>{for(const f of (await files()).filter(f=>/\.(html|json|css|js)$/.test(f))){const body=await readFile(f,'utf8');assert.doesNotMatch(body,/https?:\/\/(?:localhost|127\.0\.0\.1)|\/api\/img-proxy|SESSION_SECRET|LLM_API_KEY|POSTGRES_PASSWORD|__reactRouterContext|\/admin\/login/);if(f.endsWith('.html')){const $=load(body);assert.equal($('script[type="module"]').length,0);assert.equal($('script').length,1);assert.equal($('script').attr('src'),'/feltrace/static.js')}}});
 test('Public legal pages have concrete read-only behavior and feedback destination',async()=>{for(const n of ['terms','privacy']){const $=load(await readFile(path.join(root,n,'index.html'),'utf8'));assert.ok($('h1').text());assert.match($('.static-copy').text(),/Powell-Wu/);assert.doesNotMatch($('.static-copy').text(),/请填写|开源框架自带的模板/);assert.ok($('.static-copy a[href="https://github.com/Powell-Wu/feltrace/issues"]').length)}});
+test('The reported S³FEL source formula and selected-value disclosure survive static export',async()=>{
+ const data=JSON.parse(await readFile(path.join(root,'data/index.json'),'utf8'));
+ const item=data.items.find(i=>i.paper?.arxivId==='2610.07604');assert.ok(item,'reported paper is present');
+ const $=load(await readFile(path.join(root,'items',item.id,'index.html'),'utf8'));
+ assert.match($('#paper-abstract .katex-mathml').html(),/<msup>/);
+ assert.ok($('#paper-abstract annotation').text().includes(String.raw`\rm S^3FEL`),'source TeX remains available');
+ assert.match($('details').text(),/精选理由 · 展开阅读价值/);
+ assert.ok($('link[rel="stylesheet"]').length>0);
+});
