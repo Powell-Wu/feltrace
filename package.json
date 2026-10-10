@@ -1,0 +1,13 @@
+{
+  "name": "feltrace-public",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "export": "node scripts/export.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "preview": "node scripts/serve.mjs"
+  },
+  "dependencies": {"cheerio": "1.2.0"},
+  "engines": {"node": ">=24"}
+}

@@ -1,0 +1,6 @@
+node_modules/
+.preview/
+.env*
+*.log
+site.next/
+

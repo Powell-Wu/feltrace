@@ -1,0 +1,15 @@
+// Reuse Git Credential Manager in memory; never print or persist its token.
+import {spawnSync} from 'node:child_process';
+const repo='Powell-Wu/feltrace',verb=process.argv[2]||'check';
+if(!['check','create','pages','deploy','status'].includes(verb))throw Error('Unsupported GitHub operation');
+const result=spawnSync('git',['credential','fill'],{input:'protocol=https\nhost=github.com\n\n',encoding:'utf8',env:{...process.env,GIT_TERMINAL_PROMPT:'0',GCM_INTERACTIVE:'never'}});
+const credential=Object.fromEntries(result.stdout.trim().split('\n').map(l=>l.split(/=(.*)/s).slice(0,2)));
+if(result.status!==0||!credential.password)throw Error('GitHub login required in Git Credential Manager');
+const headers={Authorization:'Bearer '+credential.password,'User-Agent':'FELTrace-Pages-Publisher',Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};
+async function request(endpoint,method='GET',body){const r=await fetch('https://api.github.com'+endpoint,{method,headers,body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(30000)});if(r.status===204)return null;const d=await r.json();if(!r.ok){const e=new Error(`GitHub ${method} ${endpoint}: ${r.status} ${d.message}`);e.status=r.status;throw e;}return d;}
+const user=await request('/user');if(user.login.toLowerCase()!=='powell-wu')throw Error('Authenticated account differs from the planned owner');
+if(verb==='check'){let exists=false;try{await request('/repos/'+repo);exists=true}catch(e){if(e.status!==404)throw e}console.log(JSON.stringify({login:user.login,id:user.id,repository:repo,exists}));}
+if(verb==='create'){let r;try{r=await request('/repos/'+repo)}catch(e){if(e.status!==404)throw e;r=await request('/user/repos','POST',{name:'feltrace',description:'FELTrace — public reading preview for free-electron laser source and accelerator research',private:false,has_issues:true,auto_init:false})}if(r.private||r.owner.login.toLowerCase()!=='powell-wu')throw Error('Unexpected repository state');console.log(JSON.stringify({repository:r.full_name,url:r.html_url,clone:r.clone_url}));}
+if(verb==='pages'){let r;try{r=await request('/repos/'+repo+'/pages')}catch(e){if(e.status!==404)throw e;r=await request('/repos/'+repo+'/pages','POST',{build_type:'workflow'})}if(r.build_type!=='workflow')r=await request('/repos/'+repo+'/pages','PUT',{build_type:'workflow'});console.log(JSON.stringify({url:r?.html_url,build_type:r?.build_type}));}
+if(verb==='deploy'){await request('/repos/'+repo+'/actions/workflows/pages.yml/dispatches','POST',{ref:'main'});console.log(JSON.stringify({repository:repo,dispatch:'pages.yml',ref:'main'}));}
+if(verb==='status'){const runs=await request('/repos/'+repo+'/actions/runs?per_page=3');let pages=null;try{pages=await request('/repos/'+repo+'/pages')}catch(e){if(e.status!==404)throw e}console.log(JSON.stringify({pages:pages?{url:pages.html_url,status:pages.status,build_type:pages.build_type}:null,runs:runs.workflow_runs.map(r=>({id:r.id,status:r.status,conclusion:r.conclusion,url:r.html_url,head:r.head_sha}))}));}
