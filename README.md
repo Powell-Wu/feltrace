@@ -15,3 +15,5 @@ The first publication's public use/privacy copy was confirmed by the owner; see 
 ## Attribution
 
 The page rendering and styling derive from AIHOT, MIT licensed, with FELTrace customization. AIHOT brand assets are not used. See LICENSE. Third-party papers, abstracts and licensed figures retain their own rights and attributions; the code license does not relicense their content.
+
+Formula markup, styles and fonts use KaTeX 0.19.0. Its MIT notice is retained in `licenses/KaTeX-LICENSE.txt` and the deployed `site/third-party/KaTeX-LICENSE.txt`.

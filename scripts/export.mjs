@@ -155,6 +155,7 @@ for(const name of ['terms','privacy','about']){
 const index=publicItems.map(i=>({id:i.id,title:i.title,originalTitle:i.originalTitle,summary:i.summary,source:i.source.name,tags:i.tags,category:i.category,publishedAt:i.publishedAt,discoveredAt:i.discoveredAt,paper:i.paper?{authors:i.paper.authors,doi:i.paper.doi,arxivId:i.paper.arxivId}:null,selected:i.selected,stream:i.contentStream,original:i.links.original}));
 await put('data/index.json',JSON.stringify({generatedAt,items:index,cards:cleanCards},null,2));
 for(const name of ['static.js','static.css'])await put(name,await readFile(path.join(ROOT,'src',name)));
+await put('third-party/KaTeX-LICENSE.txt',await readFile(path.join(ROOT,'licenses','KaTeX-LICENSE.txt')));
 const rssItems=publicItems.filter(i=>i.selected).map(i=>`<item><title>${escaped(i.title)}</title><link>${publicOrigin+base}items/${i.id}/</link><guid>${publicOrigin+base}items/${i.id}/</guid><description>${escaped(i.summary)}</description></item>`).join('');
 await put('feed.xml',`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>FELTrace · 学术精选</title><link>${publicOrigin+base}</link><description>自由电子激光光源与加速器研究索引</description>${rssItems}</channel></rss>`);
 await put('robots.txt',`User-agent: *\nDisallow: ${base}\n`);
