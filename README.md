@@ -10,7 +10,7 @@ Run the existing FELTrace service on localhost:3000. Install the pinned Cheerio 
 
 `npm run preview` serves http://127.0.0.1:4174/feltrace/. Commit only the reviewed public directory and push to this repository's `main` branch to run the Pages workflow. The export itself never pushes or starts collection/model work. No scheduled push is installed in this initial preview.
 
-First publication requires review of the public use/privacy copy. GitHub Pages uses a public repository and must be configured with the GitHub Actions build type. Public URL: https://powell-wu.github.io/feltrace/ . This is the intended address, not evidence of an existing deployment.
+The first publication's public use/privacy copy was confirmed by the owner; see COPY_APPROVAL.md. GitHub Pages uses this public repository with the GitHub Actions build type. Live preview: https://powell-wu.github.io/feltrace/ . First deployed and checked on 2026-10-10; the snapshot time is displayed on every page.
 
 ## Attribution
 
