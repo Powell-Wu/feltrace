@@ -4,8 +4,10 @@
 <li><a href="{{PUBLIC_BASE}}data/papers.json">论文 · papers.json</a></li>
 <li><a href="{{PUBLIC_BASE}}data/facilities.json">设施资讯 · facilities.json</a></li>
 <li><a href="{{PUBLIC_BASE}}data/selected.json">学术精选 · selected.json</a></li>
+<li><a href="{{PUBLIC_BASE}}data/facility-parameters.json">装置参数 · facility-parameters.json</a> · <a href="{{PUBLIC_BASE}}facilities/compare/">装置对比</a></li>
 <li><a href="{{PUBLIC_BASE}}feed.xml">精选 RSS</a> · <a href="{{PUBLIC_BASE}}llms.txt">llms.txt 接入索引</a></li></ul>
 <h2>字段与使用方式</h2><p>JSON 顶层提供 schemaVersion、generatedAt、count、items。先检查 generatedAt，再按 DOI、arXiv ID、设施名称或标签检索 items。publishedAt 是资料的真实发表时间，可能为空；discoveredAt 是首次收录时间，不等同于新发表。</p>
 <p>summary 是中文导读，reason 是入选资料的具体阅读价值；均不代表已读全文。original 指向原始来源，url 指向本站阅读页。数据不包含受限制的摘要或论文正文；缺失信息不能从标题或导读补造。</p>
 <h2>MCP 与 REST</h2><p>本机运行版另有 MCP 和 REST 查询服务，可在本机 Agent 接入页查看配置。GitHub Pages 上的此公开阅读版不运行后端，因此没有远程 MCP 或动态 REST 服务。这里列出的 JSON 是可直接读取的静态文件。</p>
+<p>装置参数 JSON 用 checkedAt 标记核实日期，以 version 标记来源资料版本；两者不等同。items 按分支、工作模式和证据阶段分列，metrics 保留定义与出处。设计值、预测值和历史值不能当作当前实测值；coverage 中待整理目录不参与比较。</p>
 <p>快照生成时间见 JSON 的 generatedAt。后续部署后端并核实访问、限流与运维配置，才会提供公网 MCP；目前请使用上述入口。</p></section>

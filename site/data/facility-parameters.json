@@ -1,0 +1,1507 @@
+{
+  "schemaVersion": 2,
+  "checkedAt": "2026-10-12",
+  "scope": "有来源与版本的装置参数资料；尚非全球完整目录。资料阶段与当前设施状态分开记录。",
+  "groups": {
+    "photon": {
+      "label": "光子束",
+      "keys": [
+        "pulse",
+        "pulseEnergy",
+        "bandwidth",
+        "polarization"
+      ]
+    },
+    "electron": {
+      "label": "电子束",
+      "keys": [
+        "electron",
+        "charge",
+        "current",
+        "emittance",
+        "energySpread",
+        "bunchDuration"
+      ]
+    },
+    "undulator": {
+      "label": "加速器与波荡器",
+      "keys": [
+        "tech",
+        "period",
+        "k"
+      ]
+    },
+    "timing": {
+      "label": "重复结构",
+      "keys": [
+        "trainRate",
+        "intraRate",
+        "pulsesPerTrain",
+        "averageRate"
+      ]
+    }
+  },
+  "labels": {
+    "pulse": "光子脉宽",
+    "pulseEnergy": "单脉冲能量",
+    "bandwidth": "带宽",
+    "polarization": "偏振",
+    "electron": "电子束能量",
+    "charge": "束团电荷",
+    "current": "峰值电流",
+    "emittance": "归一化发射度",
+    "energySpread": "电子能散",
+    "bunchDuration": "电子束团长度",
+    "tech": "加速技术",
+    "period": "波荡器周期",
+    "k": "K 参数",
+    "trainRate": "脉冲串频率",
+    "intraRate": "串内频率",
+    "pulsesPerTrain": "每串束团数",
+    "averageRate": "平均供光率"
+  },
+  "items": [
+    {
+      "id": "lcls-cu-hxu-r27",
+      "facility": "LCLS",
+      "branch": "Cu-HXU · SASE",
+      "region": "美国",
+      "band": "X射线",
+      "basis": "预计运行",
+      "version": "2026-01-09 · Run 27预测",
+      "source": "https://lcls.slac.stanford.edu/sites/default/files/2026-01/LCLS-parameters-Run-27.pdf",
+      "locator": "第1页，Cu-HXU列",
+      "note": "预计使用铜加速器；超导机正在LCLS-II-HE升级。参数依Run 24–25推算，不保证终端站性能；各项上下限不能视为同时实现。",
+      "level": "source",
+      "checkedAt": "2026-10-12",
+      "category": "projection",
+      "mode": "SASE",
+      "nm": [
+        0.054,
+        1.24
+      ],
+      "keV": [
+        1,
+        23
+      ],
+      "metrics": {
+        "electron": {
+          "text": "3.4–15 GeV",
+          "definition": "",
+          "n": null
+        },
+        "pulse": {
+          "text": "10–50 fs · FWHM",
+          "definition": "",
+          "n": null
+        },
+        "polarization": {
+          "text": "垂直线偏振",
+          "definition": "",
+          "n": null
+        },
+        "tech": {
+          "text": "常温铜直线加速器",
+          "definition": "Run 27使用铜机；不拼入超导升级设计值",
+          "n": null
+        },
+        "charge": {
+          "text": "180 pC",
+          "definition": "Run 27预测",
+          "n": null
+        },
+        "current": {
+          "text": "1–5 kA",
+          "definition": "峰值电流；上下限对应不同压缩工况",
+          "n": null
+        },
+        "emittance": {
+          "text": "0.37 μm",
+          "definition": "注入器切片；投影0.45 μm。不能与波荡器端投影发射度直接比",
+          "n": null
+        },
+        "period": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "k": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bandwidth": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulseEnergy": {
+          "text": "0.6 mJ @23 keV / 2 mJ @1 keV",
+          "definition": "源端预测；两组配对数值",
+          "n": null
+        },
+        "trainRate": {
+          "text": "不适用",
+          "definition": "本配置为单脉冲120 Hz，不采用宏脉冲串口径",
+          "n": null
+        },
+        "intraRate": {
+          "text": "不适用",
+          "definition": "",
+          "n": null
+        },
+        "pulsesPerTrain": {
+          "text": "不适用",
+          "definition": "",
+          "n": null
+        },
+        "averageRate": {
+          "text": "120 pulses/s",
+          "definition": "铜机单脉冲运行预测，不是MHz超导升级指标",
+          "n": 120
+        },
+        "energySpread": {
+          "text": "10⁻³",
+          "definition": "总相对能散；Run 27电子束表",
+          "n": null
+        },
+        "bunchDuration": {
+          "text": "3–16 μm · RMS",
+          "definition": "波荡器电子束团纵向长度；保留μm，未混为光子脉宽",
+          "n": null
+        }
+      }
+    },
+    {
+      "id": "lcls-cu-sxu-r27",
+      "facility": "LCLS",
+      "branch": "Cu-SXU · SASE",
+      "region": "美国",
+      "band": "X射线",
+      "basis": "预计运行",
+      "version": "2026-01-09 · Run 27预测",
+      "source": "https://lcls.slac.stanford.edu/sites/default/files/2026-01/LCLS-parameters-Run-27.pdf",
+      "locator": "第1页，Cu-SXU列",
+      "note": "与Cu-HXU分行；不混入历史MHz超导设计参数。工况与束线传输须单独核对。",
+      "level": "source",
+      "checkedAt": "2026-10-12",
+      "category": "projection",
+      "mode": "SASE",
+      "nm": [
+        0.62,
+        6.2
+      ],
+      "keV": [
+        0.2,
+        2
+      ],
+      "metrics": {
+        "electron": {
+          "text": "7.2–9 GeV",
+          "definition": "",
+          "n": null
+        },
+        "pulse": {
+          "text": "10–250 fs · FWHM",
+          "definition": "",
+          "n": null
+        },
+        "polarization": {
+          "text": "水平线偏振",
+          "definition": "",
+          "n": null
+        },
+        "tech": {
+          "text": "常温铜直线加速器",
+          "definition": "Run 27使用铜机；不拼入超导升级设计值",
+          "n": null
+        },
+        "charge": {
+          "text": "180 pC",
+          "definition": "Run 27预测",
+          "n": null
+        },
+        "current": {
+          "text": "1–3 kA",
+          "definition": "峰值电流；上下限对应不同压缩工况",
+          "n": null
+        },
+        "emittance": {
+          "text": "0.37 μm",
+          "definition": "注入器切片；投影0.45 μm。不能与波荡器端投影发射度直接比",
+          "n": null
+        },
+        "period": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "k": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bandwidth": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulseEnergy": {
+          "text": "1 mJ @2 keV / 2.8 mJ @0.2 keV",
+          "definition": "源端预测；两组配对数值",
+          "n": null
+        },
+        "trainRate": {
+          "text": "不适用",
+          "definition": "本配置为单脉冲120 Hz，不采用宏脉冲串口径",
+          "n": null
+        },
+        "intraRate": {
+          "text": "不适用",
+          "definition": "",
+          "n": null
+        },
+        "pulsesPerTrain": {
+          "text": "不适用",
+          "definition": "",
+          "n": null
+        },
+        "averageRate": {
+          "text": "120 pulses/s",
+          "definition": "铜机单脉冲运行预测，不是MHz超导升级指标",
+          "n": 120
+        },
+        "energySpread": {
+          "text": "10⁻³",
+          "definition": "总相对能散；Run 27电子束表",
+          "n": null
+        },
+        "bunchDuration": {
+          "text": "5–16 μm · RMS",
+          "definition": "波荡器电子束团纵向长度；保留μm，未混为光子脉宽",
+          "n": null
+        }
+      }
+    },
+    {
+      "id": "euxfel-spbsfx-2026",
+      "facility": "European XFEL",
+      "branch": "SPB/SFX · 2026-01",
+      "region": "德国",
+      "band": "X射线",
+      "basis": "运行参数",
+      "version": "2026-01 · 端站参数",
+      "source": "https://www.xfel.eu/facility/instruments/spb_sfx/instrument_parameters_for_2026_01/index_eng.html",
+      "locator": "Photon beam parameters",
+      "note": "每串≤352束团；24 keV为无聚焦平行束潜在选项。端站参数不能代表全设施或把串内MHz当连续供光率。",
+      "level": "instrument",
+      "checkedAt": "2026-10-12",
+      "category": "operation",
+      "mode": "SASE",
+      "nm": [
+        0.08265613226666665,
+        0.20664033066666665
+      ],
+      "keV": [
+        6,
+        15
+      ],
+      "metrics": {
+        "electron": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulse": {
+          "text": "25 fs · 估计",
+          "definition": "",
+          "n": null
+        },
+        "polarization": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "tech": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "charge": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "current": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "emittance": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "period": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "k": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bandwidth": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulseEnergy": {
+          "text": "≥2 mJ @9.3 keV",
+          "definition": "典型端站参数",
+          "n": null
+        },
+        "trainRate": {
+          "text": "10 Hz",
+          "definition": "端站脉冲串",
+          "n": null
+        },
+        "intraRate": {
+          "text": "100 kHz 或 1.1–4.5 MHz",
+          "definition": "端站可选串内频率",
+          "n": null
+        },
+        "pulsesPerTrain": {
+          "text": "≤352",
+          "definition": "端站单串束团上限",
+          "n": null
+        },
+        "averageRate": {
+          "text": "待补充",
+          "definition": "不将每串上限×串频冒充实际平均供光率",
+          "n": null
+        },
+        "energySpread": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bunchDuration": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        }
+      }
+    },
+    {
+      "id": "flash2-parameters",
+      "facility": "FLASH",
+      "branch": "FLASH2 · SASE",
+      "region": "德国",
+      "band": "EUV/软X",
+      "basis": "运行参数",
+      "version": "页面未标资料日期 · 2026-10-10核实",
+      "source": "https://photon-science.desy.de/facilities/flash/flash_parameters/index_eng.html",
+      "locator": "XUV Photons，FL2列及脚注",
+      "note": "参数依所需波长而变。页面整体每秒束团数不分配到本分支；FLASH1旧参数另有升级停机脚注，不能沿用到新种子运行。",
+      "level": "source",
+      "checkedAt": "2026-10-12",
+      "category": "operation",
+      "mode": "SASE",
+      "nm": [
+        3.3,
+        90
+      ],
+      "keV": [
+        0.014,
+        0.376
+      ],
+      "metrics": {
+        "electron": {
+          "text": "待核实",
+          "definition": "加速器页正文1.25 GeV与2023表1.35 GeV不同；不混入本光子参数配置",
+          "n": null,
+          "source": "https://flash.desy.de/accelerator/",
+          "locator": "Accelerator · Electron beam parameters"
+        },
+        "pulse": {
+          "text": "<10–200 fs · FWHM",
+          "definition": "",
+          "n": null
+        },
+        "polarization": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "tech": {
+          "text": "超导直线加速器",
+          "definition": "加速器来源单独链接",
+          "n": null,
+          "source": "https://flash.desy.de/accelerator/",
+          "locator": "Accelerator · superconducting linear accelerator"
+        },
+        "charge": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "current": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "emittance": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "period": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "k": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bandwidth": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulseEnergy": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "trainRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "intraRate": {
+          "text": "40–1000 kHz",
+          "definition": "离散设置：40/50/100/200/250/500/1000 kHz",
+          "n": null
+        },
+        "pulsesPerTrain": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "averageRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "energySpread": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bunchDuration": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        }
+      }
+    },
+    {
+      "id": "fermi-fel1-2020",
+      "facility": "FERMI",
+      "branch": "FEL-1 · 20–26 nm工况",
+      "region": "意大利",
+      "band": "EUV/软X",
+      "basis": "历史运行",
+      "version": "2020-11-12 · 参数表",
+      "source": "https://www.elettra.eu/lightsources/fermi/fel1-2-parameters.html",
+      "locator": "FEL-1，20–26 nm行",
+      "note": "源端脉冲能量20–50 μJ；线偏振约减半。保留旧版本日期；同一beamtime不能同时使用FEL-1和FEL-2，也不能保证一条源的全部波长范围。",
+      "level": "source",
+      "checkedAt": "2026-10-12",
+      "category": "history",
+      "mode": "外种子 HGHG",
+      "nm": [
+        20,
+        26
+      ],
+      "metrics": {
+        "electron": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulse": {
+          "text": "约40 fs · FWHM",
+          "definition": "",
+          "n": null
+        },
+        "polarization": {
+          "text": "圆偏振表格工况",
+          "definition": "",
+          "n": null
+        },
+        "tech": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "charge": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "current": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "emittance": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "period": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "k": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bandwidth": {
+          "text": "≈0.1%",
+          "definition": "2020表格；不同波长工况不可拼接",
+          "n": null
+        },
+        "pulseEnergy": {
+          "text": "20–50 μJ",
+          "definition": "对应本行波长工况、圆偏振；线偏振能量约减半",
+          "n": null
+        },
+        "trainRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "intraRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulsesPerTrain": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "averageRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "energySpread": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bunchDuration": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        }
+      }
+    },
+    {
+      "id": "fermi-fel2-2020",
+      "facility": "FERMI",
+      "branch": "FEL-2 · 4–5 nm工况",
+      "region": "意大利",
+      "band": "EUV/软X",
+      "basis": "历史运行",
+      "version": "2020-11-12 · 参数表",
+      "source": "https://www.elettra.eu/lightsources/fermi/fel1-2-parameters.html",
+      "locator": "FEL-2，4–5 nm行",
+      "note": "源端脉冲能量3–5 μJ；不能拼接FEL-1最高能量与FEL-2最短波长形成一套虚拟性能。近期升级后参数仍需核实。",
+      "level": "source",
+      "checkedAt": "2026-10-12",
+      "category": "history",
+      "mode": "外种子 HGHG",
+      "nm": [
+        4,
+        5
+      ],
+      "metrics": {
+        "electron": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulse": {
+          "text": "约20 fs · FWHM",
+          "definition": "",
+          "n": null
+        },
+        "polarization": {
+          "text": "圆偏振表格工况",
+          "definition": "",
+          "n": null
+        },
+        "tech": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "charge": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "current": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "emittance": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "period": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "k": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bandwidth": {
+          "text": "≈0.1%",
+          "definition": "2020表格；不同波长工况不可拼接",
+          "n": null
+        },
+        "pulseEnergy": {
+          "text": "3–5 μJ",
+          "definition": "对应本行波长工况、圆偏振；线偏振能量约减半",
+          "n": null
+        },
+        "trainRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "intraRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulsesPerTrain": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "averageRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "energySpread": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bunchDuration": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        }
+      }
+    },
+    {
+      "id": "sacla-bl3-normal",
+      "facility": "SACLA",
+      "branch": "BL3 · SASE",
+      "region": "日本",
+      "band": "X射线",
+      "basis": "运行参数",
+      "version": "官网页面未标资料日期 · 2026-10-10核实",
+      "source": "https://xfel.riken.jp/users/bml02-11.html",
+      "locator": "光源性能，BL3通常運転モード",
+      "note": "电子束团<20 fs与光子脉冲2–10 fs分别定义。自种子参数另列，不混入此SASE行；官网要求申请前确认可提供条件。",
+      "level": "source",
+      "checkedAt": "2026-10-12",
+      "category": "operation",
+      "mode": "SASE",
+      "nm": [
+        0.0619920992,
+        0.309960496
+      ],
+      "keV": [
+        4,
+        20
+      ],
+      "metrics": {
+        "electron": {
+          "text": "≤8.5 GeV",
+          "definition": "电子束能量上限",
+          "n": 8.5
+        },
+        "pulse": {
+          "text": "2–10 fs · 光子脉冲",
+          "definition": "",
+          "n": null
+        },
+        "polarization": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "tech": {
+          "text": "待补充",
+          "definition": "此源表未说明RF结构，另行取得加速器文档",
+          "n": null
+        },
+        "charge": {
+          "text": "200–300 pC",
+          "definition": "源文0.2–0.3 nC；换算×1000",
+          "n": null
+        },
+        "current": {
+          "text": ">10 kA",
+          "definition": "峰值电流",
+          "n": null
+        },
+        "emittance": {
+          "text": "≈0.4 μm",
+          "definition": "归一化切片发射度",
+          "n": null
+        },
+        "period": {
+          "text": "18 mm",
+          "definition": "波荡器周期",
+          "n": null
+        },
+        "k": {
+          "text": "<2.7",
+          "definition": "源文K定义",
+          "n": null
+        },
+        "bandwidth": {
+          "text": "0.5% @10 keV",
+          "definition": "SASE · ΔE/E FWHM；不使用单色器0.01%",
+          "n": null
+        },
+        "pulseEnergy": {
+          "text": ">0.6 mJ @10 keV",
+          "definition": "SASE源参数；透过率约70%不用于再推算端站能量",
+          "n": null
+        },
+        "trainRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "intraRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulsesPerTrain": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "averageRate": {
+          "text": "通常30 · 最高60 pulses/s",
+          "definition": "通常值与上限分别记录",
+          "n": 30
+        },
+        "energySpread": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bunchDuration": {
+          "text": "<20 fs",
+          "definition": "电子束团时间宽度；原文未标FWHM/RMS",
+          "n": null
+        }
+      }
+    },
+    {
+      "id": "sacla-bl3-seed",
+      "facility": "SACLA",
+      "branch": "BL3 · 自种子",
+      "region": "日本",
+      "band": "X射线",
+      "basis": "运行参数",
+      "version": "官网页面未标资料日期 · 2026-10-10核实",
+      "source": "https://xfel.riken.jp/users/bml02-11.html",
+      "locator": "セルフシード (BL3) 表格",
+      "note": "特殊模式需要约一个shift调机；可供波长需在申请前核实。SASE源参数和自种子光子参数分别记录。",
+      "level": "source",
+      "checkedAt": "2026-10-12",
+      "category": "operation",
+      "mode": "自种子",
+      "nm": [
+        0.08265613226666665,
+        0.17712028342857142
+      ],
+      "keV": [
+        7,
+        15
+      ],
+      "metrics": {
+        "electron": {
+          "text": "待补充",
+          "definition": "自种子工况电子能量未给出",
+          "n": null
+        },
+        "pulse": {
+          "text": "待补充",
+          "definition": "没有把SASE脉宽复制到自种子",
+          "n": null
+        },
+        "polarization": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "tech": {
+          "text": "待补充",
+          "definition": "此源表未说明RF结构，另行取得加速器文档",
+          "n": null
+        },
+        "charge": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "current": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "emittance": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "period": {
+          "text": "18 mm",
+          "definition": "波荡器周期",
+          "n": null
+        },
+        "k": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bandwidth": {
+          "text": "0.01%",
+          "definition": "ΔE/E · FWHM",
+          "n": null
+        },
+        "pulseEnergy": {
+          "text": "200 μJ",
+          "definition": "自种子典型值",
+          "n": null
+        },
+        "trainRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "intraRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulsesPerTrain": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "averageRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "energySpread": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bunchDuration": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        }
+      }
+    },
+    {
+      "id": "flash2-2023",
+      "facility": "FLASH",
+      "branch": "FLASH2 · 2023运行表",
+      "region": "德国",
+      "band": "EUV/软X",
+      "basis": "历史运行",
+      "version": "2023 · 加速器参数表",
+      "source": "https://flash.desy.de/accelerator/",
+      "locator": "FLASH parameters 2023 · FLASH2列",
+      "note": "独立保存2023表，不覆盖另一张无日期光子参数表。电子能量下限原文0.4、单位MeV，口径待核，不自行改写成0.4 GeV。",
+      "level": "source",
+      "checkedAt": "2026-10-12",
+      "category": "history",
+      "mode": "SASE",
+      "nm": [
+        3.3,
+        90
+      ],
+      "keV": [
+        0.014,
+        0.376
+      ],
+      "metrics": {
+        "electron": {
+          "text": "≤1.35 GeV · 下限待核",
+          "definition": "2023表1350 MeV；下限原文口径待核",
+          "n": null
+        },
+        "pulse": {
+          "text": "10–200 fs",
+          "definition": "FWHM · 2023表",
+          "n": null
+        },
+        "polarization": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "tech": {
+          "text": "超导直线加速器",
+          "definition": "加速器来源单独链接",
+          "n": null,
+          "source": "https://flash.desy.de/accelerator/",
+          "locator": "Accelerator · superconducting linear accelerator"
+        },
+        "charge": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "current": {
+          "text": "1–2.5 kA",
+          "definition": "2023运行表",
+          "n": null
+        },
+        "emittance": {
+          "text": "0.4 μm @0.4 nC",
+          "definition": "归一化发射度；未区分切片/投影",
+          "n": null
+        },
+        "period": {
+          "text": "31.4 mm",
+          "definition": "原文3.14 cm",
+          "n": null
+        },
+        "k": {
+          "text": "1.0–2.7",
+          "definition": "2023表",
+          "n": null
+        },
+        "bandwidth": {
+          "text": "0.5–2%",
+          "definition": "FWHM · 2023表",
+          "n": null
+        },
+        "pulseEnergy": {
+          "text": "1–1000 μJ",
+          "definition": "单脉冲 · 随工况变化",
+          "n": null
+        },
+        "trainRate": {
+          "text": "10 Hz",
+          "definition": "2023运行表：宏脉冲串",
+          "n": null
+        },
+        "intraRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulsesPerTrain": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "averageRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "energySpread": {
+          "text": "500 keV",
+          "definition": "绝对能散；2023 FLASH2列",
+          "n": null
+        },
+        "bunchDuration": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        }
+      }
+    },
+    {
+      "id": "swissfel-aramis-design",
+      "facility": "SwissFEL",
+      "branch": "Aramis · 设计基线",
+      "region": "瑞士",
+      "band": "X射线",
+      "basis": "设计资料",
+      "version": "无资料日期 · 页面保留建设期表述",
+      "source": "https://www.psi.ch/fr/swissfel/accelerator",
+      "locator": "The FELs / Main parameters",
+      "note": "用于结构设计比较；不代表2026用户可供性能。Athos近期运行范围可能已变化，保留此基线并等待近期运行表。",
+      "level": "source",
+      "checkedAt": "2026-10-12",
+      "category": "specification",
+      "mode": "SASE",
+      "nm": [
+        0.1,
+        0.7
+      ],
+      "metrics": {
+        "electron": {
+          "text": "2.1–5.8 GeV",
+          "definition": "设施设计范围；分支电子能量待独立确认",
+          "n": null
+        },
+        "tech": {
+          "text": "常温 C-band",
+          "definition": "5.7 GHz；原表末段也简写为6 GHz",
+          "n": null
+        },
+        "charge": {
+          "text": "10–200 pC",
+          "definition": "设施设计范围",
+          "n": null
+        },
+        "emittance": {
+          "text": "0.4 μm",
+          "definition": "归一化；该总表未区分切片/投影，不参与数值排序",
+          "n": null
+        },
+        "period": {
+          "text": "15 mm",
+          "definition": "",
+          "n": null
+        },
+        "k": {
+          "text": "1.2",
+          "definition": "基线原表K；不替换为近期运行值",
+          "n": null
+        },
+        "pulse": {
+          "text": "待核实",
+          "definition": "页面同时给出1–20 fs与24 fs，两处口径有冲突；不任选一组",
+          "n": null
+        },
+        "polarization": {
+          "text": "线偏振 · 平面波荡器",
+          "definition": "",
+          "n": null
+        },
+        "pulseEnergy": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bandwidth": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "current": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "trainRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "intraRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulsesPerTrain": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "averageRate": {
+          "text": "100 pulses/s / 分支",
+          "definition": "设计；不得用设施两线之和200排序",
+          "n": 100
+        },
+        "energySpread": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bunchDuration": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        }
+      }
+    },
+    {
+      "id": "swissfel-athos-design",
+      "facility": "SwissFEL",
+      "branch": "Athos · 设计基线",
+      "region": "瑞士",
+      "band": "X射线",
+      "basis": "设计资料",
+      "version": "无资料日期 · 页面保留建设期表述",
+      "source": "https://www.psi.ch/fr/swissfel/accelerator",
+      "locator": "The FELs / Main parameters",
+      "note": "用于结构设计比较；不代表2026用户可供性能。Athos近期运行范围可能已变化，保留此基线并等待近期运行表。",
+      "level": "source",
+      "checkedAt": "2026-10-12",
+      "category": "specification",
+      "mode": "SASE",
+      "nm": [
+        0.65,
+        5
+      ],
+      "metrics": {
+        "electron": {
+          "text": "2.1–5.8 GeV",
+          "definition": "设施设计范围；分支电子能量待独立确认",
+          "n": null
+        },
+        "tech": {
+          "text": "常温 C-band",
+          "definition": "5.7 GHz；原表末段也简写为6 GHz",
+          "n": null
+        },
+        "charge": {
+          "text": "10–200 pC",
+          "definition": "设施设计范围",
+          "n": null
+        },
+        "emittance": {
+          "text": "0.4 μm",
+          "definition": "归一化；该总表未区分切片/投影，不参与数值排序",
+          "n": null
+        },
+        "period": {
+          "text": "38 mm",
+          "definition": "",
+          "n": null
+        },
+        "k": {
+          "text": "1.0–3.5",
+          "definition": "基线原表K；不替换为近期运行值",
+          "n": null
+        },
+        "pulse": {
+          "text": "待核实",
+          "definition": "页面同时给出1–20 fs与24 fs，两处口径有冲突；不任选一组",
+          "n": null
+        },
+        "polarization": {
+          "text": "可调偏振 · APPLE",
+          "definition": "",
+          "n": null
+        },
+        "pulseEnergy": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bandwidth": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "current": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "trainRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "intraRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulsesPerTrain": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "averageRate": {
+          "text": "100 pulses/s / 分支",
+          "definition": "设计；不得用设施两线之和200排序",
+          "n": 100
+        },
+        "energySpread": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bunchDuration": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        }
+      }
+    },
+    {
+      "id": "pal-hx1-spec",
+      "facility": "PAL-XFEL",
+      "branch": "HX1 · 规格基线",
+      "region": "韩国",
+      "band": "X射线",
+      "basis": "规格资料",
+      "version": "官网规格 · 无资料日期",
+      "source": "https://pal.postech.ac.kr/en/pal/deviceIntrcn.do",
+      "locator": "PAL-XFEL Devices / Distribution of beamlines",
+      "note": "单束团60 Hz时两分支各30 Hz；双束团时两分支各60 Hz。规格不是当前实验保障值。电子束60 fs不能自动作光子脉宽。",
+      "level": "source",
+      "checkedAt": "2026-10-12",
+      "category": "specification",
+      "mode": "SASE",
+      "nm": [
+        0.06,
+        1
+      ],
+      "metrics": {
+        "tech": {
+          "text": "常温 S-band",
+          "definition": "2.856 GHz",
+          "n": null
+        },
+        "electron": {
+          "text": "10 GeV",
+          "definition": "官网布局描述",
+          "n": 10
+        },
+        "charge": {
+          "text": "200 pC",
+          "definition": "0.2 nC",
+          "n": null
+        },
+        "current": {
+          "text": "3 kA",
+          "definition": "规格峰值",
+          "n": null
+        },
+        "emittance": {
+          "text": "0.4 / 典型0.6 μm",
+          "definition": "切片；原表mm·mrad与μm等价",
+          "n": null
+        },
+        "period": {
+          "text": "24.4 mm",
+          "definition": "硬X波荡器规格，不外推软X",
+          "n": null
+        },
+        "k": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulse": {
+          "text": "待补充",
+          "definition": "60 fs仅出现在功率示例工况，不作全范围脉宽",
+          "n": null
+        },
+        "polarization": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulseEnergy": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bandwidth": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "trainRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "intraRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulsesPerTrain": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "averageRate": {
+          "text": "30或60 pulses/s / 分支",
+          "definition": "官网单/双束团分配工况；不把电子束团数直接相加",
+          "n": null
+        },
+        "energySpread": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bunchDuration": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        }
+      }
+    },
+    {
+      "id": "pal-sx1-spec",
+      "facility": "PAL-XFEL",
+      "branch": "SX1 · 规格基线",
+      "region": "韩国",
+      "band": "X射线",
+      "basis": "规格资料",
+      "version": "官网规格 · 无资料日期",
+      "source": "https://pal.postech.ac.kr/en/pal/deviceIntrcn.do",
+      "locator": "PAL-XFEL Devices / Distribution of beamlines",
+      "note": "单束团60 Hz时两分支各30 Hz；双束团时两分支各60 Hz。规格不是当前实验保障值。电子束60 fs不能自动作光子脉宽。",
+      "level": "source",
+      "checkedAt": "2026-10-12",
+      "category": "specification",
+      "mode": "SASE",
+      "nm": [
+        1,
+        10
+      ],
+      "metrics": {
+        "tech": {
+          "text": "常温 S-band",
+          "definition": "2.856 GHz",
+          "n": null
+        },
+        "electron": {
+          "text": "3 GeV",
+          "definition": "官网布局描述",
+          "n": 3
+        },
+        "charge": {
+          "text": "200 pC",
+          "definition": "0.2 nC",
+          "n": null
+        },
+        "current": {
+          "text": "3 kA",
+          "definition": "规格峰值",
+          "n": null
+        },
+        "emittance": {
+          "text": "0.4 / 典型0.6 μm",
+          "definition": "切片；原表mm·mrad与μm等价",
+          "n": null
+        },
+        "period": {
+          "text": "待补充",
+          "definition": "硬X波荡器规格，不外推软X",
+          "n": null
+        },
+        "k": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulse": {
+          "text": "待补充",
+          "definition": "60 fs仅出现在功率示例工况，不作全范围脉宽",
+          "n": null
+        },
+        "polarization": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulseEnergy": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bandwidth": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "trainRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "intraRate": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "pulsesPerTrain": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "averageRate": {
+          "text": "30或60 pulses/s / 分支",
+          "definition": "官网单/双束团分配工况；不把电子束团数直接相加",
+          "n": null
+        },
+        "energySpread": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        },
+        "bunchDuration": {
+          "text": "待补充",
+          "definition": "",
+          "n": null
+        }
+      }
+    }
+  ],
+  "coverage": [
+    {
+      "group": "中国 FEL",
+      "name": "SHINE / SXFEL / DCLS / S³FEL",
+      "gap": "逐装置身份、分支、状态与运行参数待建立；不以新闻数值代替完整参数表。"
+    },
+    {
+      "group": "红外与 THz",
+      "name": "FELIX / FLARE / FELICE / FELBE / FHI-FEL",
+      "gap": "需支持振荡器、宏/微脉冲与平均功率口径，按独立来源核实。"
+    },
+    {
+      "group": "源端参数",
+      "name": "European XFEL · SASE1 / 2 / 3",
+      "gap": "现有证据为SPB/SFX端站，单列保留；源端三分支参数待逐项核实。"
+    }
+  ]
+}

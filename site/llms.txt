@@ -6,6 +6,8 @@
 - [论文 JSON](https://powell-wu.github.io/feltrace/data/papers.json)
 - [设施资讯 JSON](https://powell-wu.github.io/feltrace/data/facilities.json)
 - [精选 JSON](https://powell-wu.github.io/feltrace/data/selected.json)
+- [装置参数 JSON](https://powell-wu.github.io/feltrace/data/facility-parameters.json)
+- [装置对比](https://powell-wu.github.io/feltrace/facilities/compare/)
 - [精选 RSS](https://powell-wu.github.io/feltrace/feed.xml)
 
-JSON 含 schemaVersion、generatedAt、count、items。publishedAt 为原文发表时间（可能未知），discoveredAt 为本站首次收录时间。reason 为精选阅读价值，summary 为中文导读，均非全文笔记。请在客户端检索/过滤；此静态站不提供远程 MCP 或 REST 查询服务。请通过 original 核对原始来源，勿推定未提供的论文正文或设施参数。
+论文与资讯 JSON 含 schemaVersion、generatedAt、count、items。publishedAt 为原文发表时间（可能未知），discoveredAt 为本站首次收录时间。reason 为精选阅读价值，summary 为中文导读，均非全文笔记。装置参数含 checkedAt、groups、labels、items 和 coverage；逐配置保留资料阶段、版本、定义、工况及官方出处，尚非全球完整目录。请在客户端检索/过滤；此静态站不提供远程 MCP 或 REST 查询服务。请通过原始来源核对，勿推定未提供的论文正文或设施参数。

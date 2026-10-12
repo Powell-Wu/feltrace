@@ -118,7 +118,12 @@ for(const [route,mode] of [['/','selected'],['/papers','papers'],['/facilities',
  $('.academic-filters select[name="sort"]').val('published');
  await savePage(route,$);
 }
-const extraRoutes=new Set(['/about','/more','/topics','/changelog','/daily','/daily/archive','/weekly','/monthly']);
+const extraRoutes=new Set(['/about','/more','/topics','/changelog','/daily','/daily/archive','/weekly','/monthly','/facilities/compare']);
+const facilityParameters=await json('/api/v1/facility-parameters');
+await put('data/facility-parameters.json',JSON.stringify(facilityParameters,null,2));
+// Enhance the same server-rendered parameter page with its isolated, dependency-free controls.
+const facilityClient=await readFile(path.resolve(ROOT,'../app/apps/web/app/features/facilities/explorer.js'),'utf8');
+await put('facility-explorer.js',facilityClient.replace(/\bexport (?=(?:const|function) )/g,''));
 const topics=(await json('/api/site/topics')).topics;
 for(const topic of topics){
  extraRoutes.add('/topics/'+topic.slug);
@@ -133,7 +138,12 @@ for(const id of [...itemMap.keys()]){
  for(const version of detail.item?.paperVersions||detail.paperVersions||[])if(version.id)extraRoutes.add('/items/'+version.id);
 }
 for(const p of extraRoutes){
- try {const $=await clean(await (await get(p)).text(),p);await savePage(p,$);}
+ try {const $=await clean(await (await get(p)).text(),p);
+   if(p==='/facilities/compare'){
+     if($('.facility-explorer #grid tbody tr').length!==facilityParameters.items.filter(item=>item.level==='source').length)throw Error('Facility catalogue changed during export');
+     $('body').append(`<script id="facility-data" type="application/json">${JSON.stringify(facilityParameters).replaceAll('<','\\u003c')}</script><script src="${base}facility-explorer.js" defer></script>`);
+   }
+   await savePage(p,$);}
  catch(e){throw Error(`Required page ${p} failed: ${e.message}`);}
  if(p.startsWith('/items/'))process.stdout.write('.');
 }
@@ -160,7 +170,7 @@ for(const [name,mode] of [['papers','paper'],['facilities','news'],['selected',n
   .map(i=>({...index.find(record=>record.id===i.id),reason:i.reason??null,url:publicOrigin+base+`items/${i.id}/`}));
  await put(`data/${name}.json`,JSON.stringify({schemaVersion:1,generatedAt,count:items.length,items},null,2));
 }
-await put('llms.txt',`# FELTrace\n\n自由电子激光光源与加速器论文和设施资讯索引。当前为静态阅读快照，读取不会触发模型。\n\n- [Agent 接入](${publicOrigin+base}agent/)\n- [论文 JSON](${publicOrigin+base}data/papers.json)\n- [设施资讯 JSON](${publicOrigin+base}data/facilities.json)\n- [精选 JSON](${publicOrigin+base}data/selected.json)\n- [精选 RSS](${publicOrigin+base}feed.xml)\n\nJSON 含 schemaVersion、generatedAt、count、items。publishedAt 为原文发表时间（可能未知），discoveredAt 为本站首次收录时间。reason 为精选阅读价值，summary 为中文导读，均非全文笔记。请在客户端检索/过滤；此静态站不提供远程 MCP 或 REST 查询服务。请通过 original 核对原始来源，勿推定未提供的论文正文或设施参数。\n`);
+await put('llms.txt',`# FELTrace\n\n自由电子激光光源与加速器论文和设施资讯索引。当前为静态阅读快照，读取不会触发模型。\n\n- [Agent 接入](${publicOrigin+base}agent/)\n- [论文 JSON](${publicOrigin+base}data/papers.json)\n- [设施资讯 JSON](${publicOrigin+base}data/facilities.json)\n- [精选 JSON](${publicOrigin+base}data/selected.json)\n- [装置参数 JSON](${publicOrigin+base}data/facility-parameters.json)\n- [装置对比](${publicOrigin+base}facilities/compare/)\n- [精选 RSS](${publicOrigin+base}feed.xml)\n\n论文与资讯 JSON 含 schemaVersion、generatedAt、count、items。publishedAt 为原文发表时间（可能未知），discoveredAt 为本站首次收录时间。reason 为精选阅读价值，summary 为中文导读，均非全文笔记。装置参数含 checkedAt、groups、labels、items 和 coverage；逐配置保留资料阶段、版本、定义、工况及官方出处，尚非全球完整目录。请在客户端检索/过滤；此静态站不提供远程 MCP 或 REST 查询服务。请通过原始来源核对，勿推定未提供的论文正文或设施参数。\n`);
 for(const name of ['static.js','static.css'])await put(name,await readFile(path.join(ROOT,'src',name)));
 await put('third-party/KaTeX-LICENSE.txt',await readFile(path.join(ROOT,'licenses','KaTeX-LICENSE.txt')));
 const rssItems=publicItems.filter(i=>i.selected).map(i=>`<item><title>${escaped(i.title)}</title><link>${publicOrigin+base}items/${i.id}/</link><guid>${publicOrigin+base}items/${i.id}/</guid><description>${escaped(i.summary)}</description></item>`).join('');
