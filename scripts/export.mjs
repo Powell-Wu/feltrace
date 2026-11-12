@@ -154,7 +154,7 @@ for(const imagePath of facilityFigures){
 }
 for(const profile of facilityParameters.profiles)extraRoutes.add(`/facilities/${profile.id}/research`);
 // Bundle the same modules as the dynamic page, including their dependencies.
-await put('facility-explorer.js',await buildFacilityClient());
+await put('facility-explorer-v2.js',await buildFacilityClient());
 const topics=(await json('/api/site/topics')).topics;
 for(const topic of topics){
  extraRoutes.add('/topics/'+topic.slug);
@@ -175,7 +175,7 @@ for(const p of extraRoutes){
      const renderedIds=$('.facility-explorer #catalogue [data-configuration]').toArray().map(node=>$(node).attr('data-configuration')).sort();
      const catalogueIds=facilityParameters.items.filter(item=>item.level==='source').map(item=>item.id).sort();
      if(JSON.stringify(renderedIds)!==JSON.stringify(catalogueIds))throw Error('Facility catalogue changed during export');
-     $('body').append(`<script id="facility-data" type="application/json">${JSON.stringify(facilityParameters).replaceAll('<','\\u003c')}</script><script src="${base}facility-explorer.js" defer></script>`);
+     $('body').append(`<script id="facility-data" type="application/json">${JSON.stringify(facilityParameters).replaceAll('<','\\u003c')}</script><script src="${base}facility-explorer-v2.js" defer></script>`);
    }
    await savePage(p,$);}
  catch(e){throw Error(`Required page ${p} failed: ${e.message}`);}

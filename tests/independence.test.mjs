@@ -23,6 +23,6 @@ test('public exporter and publication scripts have no private app dependency',as
 
 test('vendored facility source reproduces the reviewed browser bundle exactly',async()=>{
  const actual=await buildFacilityClient();
- const expected=await readFile(path.join(root,'site/facility-explorer.js'),'utf8');
+ const expected=await readFile(path.join(root,'site/facility-explorer-v2.js'),'utf8');
  assert.equal(actual,expected);
 });
