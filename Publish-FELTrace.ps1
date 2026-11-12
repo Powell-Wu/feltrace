@@ -1,8 +1,7 @@
 param([switch]$Refresh,[switch]$PrepareOnly)
 $ErrorActionPreference='Stop'
 $source=$PSScriptRoot
-$workspaceRoot=(Resolve-Path -LiteralPath (Join-Path $source '..')).Path
-$runtime=Join-Path $workspaceRoot '.runtime'
+$runtime=Join-Path $source '.runtime'
 $remote='https://github.com/Powell-Wu/feltrace.git'
 Push-Location -LiteralPath $source
 try {
@@ -10,12 +9,12 @@ try {
   if ($Refresh) { node scripts/export.mjs; if($LASTEXITCODE -ne 0){throw 'Export failed'} }
   npm run test:snapshot
   if($LASTEXITCODE -ne 0){throw 'Public export verification failed'}
-  # Keep publication Git metadata outside the private source directory.
+  # Keep staging metadata in this independent public repository's ignored runtime directory.
   $candidate=Join-Path $runtime ('public-release-'+[guid]::NewGuid().ToString('N'))
   New-Item -ItemType Directory -Path $runtime -Force | Out-Null
   git -c http.version=HTTP/1.1 clone --quiet --depth=1 $remote $candidate
   if($LASTEXITCODE -ne 0){throw 'Public checkout failed; source workspace retained'}
-  $allowed=@('.github','site','src','scripts','tests','copy','licenses','package.json','package-lock.json','.gitignore','README.md','LICENSE','COPY_APPROVAL.md','Publish-FELTrace.ps1')
+  $allowed=@('.github','site','src','scripts','tests','vendor','docs','copy','licenses','package.json','package-lock.json','.gitignore','README.md','LICENSE','COPY_APPROVAL.md','Publish-FELTrace.ps1')
   $candidateFull=[IO.Path]::GetFullPath($candidate)
   foreach($name in $allowed){
     $from=Join-Path $source $name

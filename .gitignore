@@ -3,4 +3,5 @@ node_modules/
 .env*
 *.log
 site.next/
+.runtime/
 

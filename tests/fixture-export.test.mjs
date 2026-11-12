@@ -7,7 +7,7 @@ import path from 'node:path';
 import os from 'node:os';
 import {createRequire} from 'node:module';
 import {selectStaticItems} from '../src/query.mjs';
-const require=createRequire(import.meta.url);let load;try{({load}=require('cheerio'))}catch{({load}=require('../../app/node_modules/cheerio'))}
+const require=createRequire(import.meta.url),{load}=require('cheerio');
 const root=path.resolve(import.meta.dirname,'..');
 
 async function fixture(t){

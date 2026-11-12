@@ -3,7 +3,7 @@ import {readFile,writeFile,readdir,mkdir,stat} from 'node:fs/promises';
 import path from 'node:path';
 import {createRequire} from 'node:module';
 import {createHash} from 'node:crypto';
-const require=createRequire(import.meta.url);let load;try{({load}=require('cheerio'))}catch{({load}=require('../../app/node_modules/cheerio'))}
+const require=createRequire(import.meta.url),{load}=require('cheerio');
 const root=path.resolve('site'),base='/feltrace/',cache=new Map();
 async function walk(p){const a=[];for(const e of await readdir(p,{withFileTypes:true})){const f=path.join(p,e.name);if(e.isDirectory())a.push(...await walk(f));else a.push(f)}return a}
 const broken=new Set();

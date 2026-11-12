@@ -38,7 +38,7 @@ This repository contains public generated output under `site/`; initial snapshot
 
 ## Refresh locally
 
-Run the existing FELTrace service on localhost:3000. Install the pinned Cheerio dependency with `npm ci` in this directory, then run `npm run export` and `npm run test:snapshot`. In the original workspace the exporter can reuse the existing app's installed Cheerio package.
+Run the existing FELTrace service on localhost:3000. Install the pinned dependencies with `npm ci` in this directory, then run `npm run export` and `npm run test:snapshot`. All exporter sources are vendored under `vendor/`; no private app checkout is used.
 
 `npm test` runs the offline query and export regression suite against a disposable loopback fixture. It needs no database, private papers, generated site, external API or browser download. `npm run test:snapshot` separately checks the actual generated snapshot, including the reviewed S³FEL example. Set `FELTRACE_OUTPUT_DIR` for an isolated export and snapshot test instead of replacing `site/`.
 

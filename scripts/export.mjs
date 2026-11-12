@@ -3,11 +3,10 @@ import {mkdir,writeFile,readFile,rename,rm,stat,readdir} from 'node:fs/promises'
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash,randomUUID} from 'node:crypto';
-import {buildFacilityClient} from '../../app/apps/web/scripts/build-facility-client.mjs';
+import {buildFacilityClient} from '../vendor/facilities/build-facility-client.mjs';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const require=createRequire(import.meta.url);
-let load;
-try {({load}=require('cheerio'));} catch {({load}=require('../../app/node_modules/cheerio'));}
+const {load}=require('cheerio');
 const origin=new URL(process.env.FELTRACE_SOURCE_URL||'http://localhost:3000');
 if(!['localhost','127.0.0.1'].includes(origin.hostname))throw Error('Export source must be the local public web service');
 const base=(process.env.FELTRACE_BASE_PATH||'/feltrace/').replace(/\/$/,'')+'/';

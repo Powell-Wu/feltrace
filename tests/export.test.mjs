@@ -4,7 +4,7 @@ import {readFile,readdir,stat} from 'node:fs/promises';
 import path from 'node:path';
 import {createRequire} from 'node:module';
 import {selectStaticItems} from '../src/query.mjs';
-const require=createRequire(import.meta.url);let load;try{({load}=require('cheerio'))}catch{({load}=require('../../app/node_modules/cheerio'))}
+const require=createRequire(import.meta.url),{load}=require('cheerio');
 const root=path.resolve(process.env.FELTRACE_OUTPUT_DIR||'site');
 async function files(p=root){const all=[];for(const e of await readdir(p,{withFileTypes:true})){const f=path.join(p,e.name);if(e.isDirectory())all.push(...await files(f));else all.push(f)}return all;}
 test('Public export contains every search record and both real clocks',async()=>{const d=JSON.parse(await readFile(path.join(root,'data/index.json'),'utf8'));const r=JSON.parse(await readFile(path.join(root,'release.json'),'utf8'));for(const mode of ['papers','facilities','selected'])assert.equal(selectStaticItems(d,mode,new URLSearchParams('range=all&sort=published')).items.length,r[mode]);for(const i of d.candidates??d.items){assert.ok(d.cards[i.id]);assert.ok(i.discoveredAt);assert.ok(Object.hasOwn(i,'publishedAt'));assert.ok(i.original.startsWith('http'));assert.ok((await stat(path.join(root,'items',i.id,'index.html'))).isFile())}});
