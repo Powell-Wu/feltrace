@@ -2,7 +2,8 @@ import {createRequire} from 'node:module';
 import {mkdir,writeFile,readFile,rename,rm,stat,readdir} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {createHash} from 'node:crypto';
+import {createHash,randomUUID} from 'node:crypto';
+import {buildFacilityClient} from '../../app/apps/web/scripts/build-facility-client.mjs';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const require=createRequire(import.meta.url);
 let load;
@@ -12,36 +13,40 @@ if(!['localhost','127.0.0.1'].includes(origin.hostname))throw Error('Export sour
 const base=(process.env.FELTRACE_BASE_PATH||'/feltrace/').replace(/\/$/,'')+'/';
 if(!/^\/[a-zA-Z0-9/_-]*\/$/.test(base))throw Error('Invalid base path');
 const publicOrigin='https://powell-wu.github.io';
-const out=path.join(ROOT,'site.next');
+const current=path.resolve(process.env.FELTRACE_OUTPUT_DIR||path.join(ROOT,'site'));
+if(current===ROOT||ROOT.startsWith(current+path.sep)||current===path.parse(current).root)throw Error('Export output must be a dedicated directory');
+const out=process.env.FELTRACE_OUTPUT_DIR?current+'.next-'+randomUUID():path.join(ROOT,'.preview','staging',randomUUID());
 await mkdir(out,{recursive:true});
 const generatedAt=new Date().toISOString();
 const escaped=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const assetCache=new Map(),failures=[];
-let previousAssets=[];try{previousAssets=await readdir(path.join(ROOT,'site','assets'));}catch{}
+const requiredAssets=new Set();
+let previousAssets=[];try{previousAssets=await readdir(path.join(current,'assets'));}catch{}
 const localUrl=p=>new URL(p,origin);
 async function get(p){const r=await fetch(localUrl(p),{signal:AbortSignal.timeout(20000)});if(!r.ok)throw Error(`${p}: HTTP ${r.status}`);return r;}
 async function json(p){return (await get(p)).json();}
 async function put(p,data){const dest=path.join(out,p);await mkdir(path.dirname(dest),{recursive:true});await writeFile(dest,data);}
-async function asset(raw){
+async function asset(raw,required=false){
  if(!raw)return '';
  const u=new URL(raw,origin);
  if(u.origin!==origin.origin)return raw;
+ if(required)requiredAssets.add(u.href);
  if(assetCache.has(u.href))return assetCache.get(u.href);
  const pending=(async()=>{try{
    const digest=createHash('sha256').update(u.pathname+u.search).digest('hex').slice(0,20);
    const cached=previousAssets.find(n=>n.startsWith(digest+'.'));
    // CSS must be traversed on every export: copying a cached sheet alone loses its font/image dependencies.
-   if(cached&&!cached.endsWith('.css')){const name='assets/'+cached;await put(name,await readFile(path.join(ROOT,'site',name)));return base+name;}
+   if(cached&&!cached.endsWith('.css')){const name='assets/'+cached;await put(name,await readFile(path.join(current,name)));return base+name;}
    const r=await get(u.pathname+u.search),type=r.headers.get('content-type')||'';
    const ext=type.includes('css')?'css':type.includes('svg')?'svg':type.includes('webp')?'webp':type.includes('png')?'png':type.includes('jpeg')?'jpg':type.includes('woff2')?'woff2':type.includes('woff')?'woff':type.includes('ttf')?'ttf':type.includes('icon')?'ico':'bin';
    const name=`assets/${createHash('sha256').update(u.pathname+u.search).digest('hex').slice(0,20)}.${ext}`;
    if(ext==='css'){
     let css=await r.text();const refs=[...css.matchAll(/url\(["']?([^)'"\s]+)["']?\)/g)];
-    for(const ref of refs){if(ref[1].startsWith('data:'))continue;const resource=await asset(new URL(ref[1],u).href);css=css.replace(ref[0],`url("${resource}")`);}
+    for(const ref of refs){if(ref[1].startsWith('data:'))continue;const resource=await asset(new URL(ref[1],u).href,true);css=css.replace(ref[0],`url("${resource}")`);}
     await put(name,css);
    }else{await put(name,Buffer.from(await r.arrayBuffer()));}
    return base+name;
-  }catch(e){failures.push({kind:'asset',path:u.pathname,reason:e.message});return '';}})();
+  }catch(e){failures.push({kind:'asset',url:u.href,reason:e.message});return '';}})();
  assetCache.set(u.href,pending);return pending;
 }
 function internal(raw){
@@ -54,11 +59,11 @@ function internal(raw){
  if(p.startsWith('/story/'))p='/papers';
  if(p==='/feedback')return 'https://github.com/Powell-Wu/feltrace/issues';
  if(p.startsWith('/admin')||p.startsWith('/api/')||p.startsWith('/codex-reset')||p.startsWith('/leaderboard')||p==='/hot')return base+'about/';
- if(p.endsWith('/original')){const id=p.split('/')[2];return itemMap.get(id)?.links?.original||base+`items/${id}/`;}
+ if(p.endsWith('/original')){const id=p.split('/')[2];return (itemMap.get(id)??candidates.get(id))?.links?.original||base+`items/${id}/`;}
  if(p.endsWith('/markdown'))return base+`items/${p.split('/')[2]}/`;
  return base+(p==='/'?'':p.slice(1)+'/')+u.search+u.hash;
 }
-const itemMap=new Map(),cards=new Map(),streams={};
+const itemMap=new Map(),candidates=new Map(),cards=new Map(),streams={},memberships={};
 const rawPages=new Map();
 for(const [mode,route] of [['papers','/papers'],['facilities','/facilities'],['selected','/']]){
  let total=0;
@@ -76,15 +81,34 @@ for(const [mode,route] of [['papers','/papers'],['facilities','/facilities'],['s
  if(new Set(streams[mode].items.map(i=>i.id)).size!==total)throw Error(`${mode}: count changed during snapshot; retry export`);
  console.log(`${mode}: ${total}`);
 }
+// Search/time filtering happens before work selection. Keep public version candidates so an
+// older version matching a query remains discoverable, rather than indexing only the newest.
+for(const [mode,route] of [['papers','/papers'],['facilities','/facilities'],['selected','/']]){
+ const ids=new Set();let total=0;
+ for(let page=1;page<=500;page++){
+  const query=`?mode=${mode}&range=all&sort=published&versions=all&page=${page}`;
+  const data=await json('/api/site/academic'+query);
+  if(page===1)total=data.total;
+  for(const item of data.items){candidates.set(item.id,{...item,queryTags:data.filterTags?.[item.id]??item.tags});ids.add(item.id);}
+  const html=await (await get(route+`?range=all&sort=published&versions=all&page=${page}`)).text();
+  const $=load(html);
+  $('.paper-card,.facility-card').each((i,el)=>{const id=$(el).find('[data-item-id]').attr('data-item-id');if(id&&!cards.has(id))cards.set(id,$.html(el));});
+  if(page>=data.pageCount)break;
+ }
+ if(ids.size!==total)throw Error(`${mode}: candidate count changed during snapshot; retry export`);
+ memberships[mode]=[...ids];
+}
+for(const id of candidates.keys())if(!cards.has(id))throw Error(`Public version ${id} has no rendered card; keep the previous snapshot and check versions=all forwarding`);
 async function clean(html,p){
  const $=load(html);
  $('script,link[rel="modulepreload"],link[rel="preload"],link[rel="manifest"],meta[property="og:image"],meta[name="twitter:image"]').remove();
  $('[data-discover],[data-prefetch]').removeAttr('data-discover').removeAttr('data-prefetch');
  $('a,link[rel="alternate"]').each((i,e)=>{const href=$(e).attr('href');if(href)$(e).attr('href',internal(href));});
  for(const el of $('use[href]').toArray()){const e=$(el),u=new URL(e.attr('href'),origin);if(u.origin===origin.origin){const value=await asset(u.pathname+u.search);if(value)e.attr('href',value+u.hash);else e.remove();}}
+ $('[data-personal-library]').remove();
  for(const el of $('link[rel="stylesheet"],link[rel="icon"],link[rel="apple-touch-icon"],img,source').toArray()){
   const e=$(el),key=e.is('link')?'href':'src';
-  if(e.attr(key)){const value=await asset(e.attr(key));if(value)e.attr(key,value);else if(e.is('img')){e.replaceWith('<span class="text-[11px] text-ink-4">图片暂不可用</span>');continue;}else e.remove();}
+  if(e.attr(key)){const value=await asset(e.attr(key),e.is('link[rel="stylesheet"]'));if(value)e.attr(key,value);else if(e.is('img')){e.replaceWith(imagePlaceholder(e));continue;}else e.remove();}
   e.removeAttr('srcset').removeAttr('imagesrcset');
  }
  $('[style]').each((i,e)=>{const v=$(e).attr('style');if(v?.includes('localhost')||v?.includes('/api/'))$(e).removeAttr('style');});
@@ -99,15 +123,16 @@ async function clean(html,p){
  if(itemId)$('button[aria-label="收藏"]').attr('data-save-id',itemId);
  $('head').append(`<link rel="stylesheet" href="${base}static.css"><script src="${base}static.js" defer></script>`);
  $('body').attr('data-base',base).attr('data-page',p).attr('data-exported-at',generatedAt);
- $('#main>div').prepend(`<div class="static-status">公开阅读预览 · 内容更新于 <time datetime="${generatedAt}">${escaped(new Date(generatedAt).toLocaleString('zh-TW',{timeZone:'Asia/Taipei',hour12:false}))}（台北）</time></div>`);
+ $('#main>div').prepend(`<div class="static-status">公开阅读预览 · 内容更新于 <time datetime="${generatedAt}">${escaped(new Date(generatedAt).toLocaleString('zh-CN',{timeZone:'Asia/Singapore',hour12:false}))}（新加坡）</time></div>`);
  $('#main>div').append(`<footer class="static-footer"><a href="${base}terms/">使用说明</a><a href="${base}privacy/">隐私说明</a><a href="https://github.com/Powell-Wu/feltrace/issues">更正与反馈</a></footer>`);
  return $;
 }
 async function savePage(p,$){await put(p==='/'?'index.html':p.slice(1)+'/index.html',$.html());}
+function imagePlaceholder(image){return `<span class="static-asset-unavailable" data-asset-unavailable="true">图片暂不可用${image.attr('alt')?` · ${escaped(image.attr('alt'))}`:''}</span>`;}
 // Keep the existing renderer's card markup and stylesheet; hydrate only static reading controls.
 const publicItems=[...itemMap.values()];
 const cleanCards={};
-for(const [id,html] of cards){const $=load(html,null,false);for(const el of $('img').toArray()){const e=$(el);const src=await asset(e.attr('src'));if(src)e.attr('src',src);else e.remove();e.removeAttr('srcset');}$('a').each((i,e)=>$(e).attr('href',internal($(e).attr('href'))));$('[aria-label="收藏"]').attr('data-save-id',id);cleanCards[id]=$.html();}
+for(const [id,html] of cards){const $=load(html,null,false);for(const el of $('img').toArray()){const e=$(el);const src=await asset(e.attr('src'));if(src)e.attr('src',src);else e.replaceWith(imagePlaceholder(e));e.removeAttr('srcset');}$('a').each((i,e)=>$(e).attr('href',internal($(e).attr('href'))));$('[aria-label="收藏"]').attr('data-save-id',id);cleanCards[id]=$.html();}
 for(const [route,mode] of [['/','selected'],['/papers','papers'],['/facilities','facilities']]){
  const $=await clean(rawPages.get(route),route);
  $('.academic-page').attr('data-stream',mode);
@@ -121,9 +146,16 @@ for(const [route,mode] of [['/','selected'],['/papers','papers'],['/facilities',
 const extraRoutes=new Set(['/about','/more','/topics','/changelog','/daily','/daily/archive','/weekly','/monthly','/facilities/compare']);
 const facilityParameters=await json('/api/v1/facility-parameters');
 await put('data/facility-parameters.json',JSON.stringify(facilityParameters,null,2));
-// Enhance the same server-rendered parameter page with its isolated, dependency-free controls.
-const facilityClient=await readFile(path.resolve(ROOT,'../app/apps/web/app/features/facilities/explorer.js'),'utf8');
-await put('facility-explorer.js',facilityClient.replace(/\bexport (?=(?:const|function) )/g,''));
+// All registered local originals must be available after switching facility, not just the initial SSR image.
+const facilityFigures=new Set(facilityParameters.profiles.flatMap(profile=>profile.overview?.figures??[]).map(figure=>figure.imagePath).filter(Boolean));
+for(const imagePath of facilityFigures){
+ if(!/^\/facility-figures\/[a-zA-Z0-9_-]+\.(?:png|jpe?g|webp|avif|gif|svg)$/.test(imagePath))throw Error('Invalid facility figure path');
+ const response=await get(imagePath);
+ await put(imagePath.slice(1),Buffer.from(await response.arrayBuffer()));
+}
+for(const profile of facilityParameters.profiles)extraRoutes.add(`/facilities/${profile.id}/research`);
+// Bundle the same modules as the dynamic page, including their dependencies.
+await put('facility-explorer.js',await buildFacilityClient());
 const topics=(await json('/api/site/topics')).topics;
 for(const topic of topics){
  extraRoutes.add('/topics/'+topic.slug);
@@ -132,6 +164,7 @@ for(const topic of topics){
 }
 for(const kind of ['daily','weekly','monthly'])for(const report of (await json(`/api/site/reports/${kind}`)).items)extraRoutes.add(`/${kind}/${report.key}`);
 for(const id of itemMap.keys())extraRoutes.add('/items/'+id);
+for(const id of candidates.keys())extraRoutes.add('/items/'+id);
 // Include public versions and report references only when the existing public detail endpoint permits them.
 for(const id of [...itemMap.keys()]){
  const detail=await json('/api/site/items/'+id);
@@ -140,7 +173,9 @@ for(const id of [...itemMap.keys()]){
 for(const p of extraRoutes){
  try {const $=await clean(await (await get(p)).text(),p);
    if(p==='/facilities/compare'){
-     if($('.facility-explorer #grid tbody tr').length!==facilityParameters.items.filter(item=>item.level==='source').length)throw Error('Facility catalogue changed during export');
+     const renderedIds=$('.facility-explorer #catalogue [data-configuration]').toArray().map(node=>$(node).attr('data-configuration')).sort();
+     const catalogueIds=facilityParameters.items.filter(item=>item.level==='source').map(item=>item.id).sort();
+     if(JSON.stringify(renderedIds)!==JSON.stringify(catalogueIds))throw Error('Facility catalogue changed during export');
      $('body').append(`<script id="facility-data" type="application/json">${JSON.stringify(facilityParameters).replaceAll('<','\\u003c')}</script><script src="${base}facility-explorer.js" defer></script>`);
    }
    await savePage(p,$);}
@@ -162,25 +197,33 @@ for(const name of ['terms','privacy','about','agent']){
  await savePage('/'+name,$);
 }
 // Strip proxy URLs/signatures and export only search metadata already visible in cards.
-const index=publicItems.map(i=>({id:i.id,title:i.title,originalTitle:i.originalTitle,summary:i.summary,source:i.source.name,tags:i.tags,category:i.category,publishedAt:i.publishedAt,discoveredAt:i.discoveredAt,paper:i.paper?{authors:i.paper.authors,doi:i.paper.doi,arxivId:i.paper.arxivId}:null,selected:i.selected,stream:i.contentStream,original:i.links.original}));
-await put('data/index.json',JSON.stringify({generatedAt,items:index,cards:cleanCards},null,2));
+const indexRecord=i=>({id:i.id,title:i.title,originalTitle:i.originalTitle,summary:i.summary,source:i.source.name,tags:i.tags,queryTags:i.queryTags,category:i.category,publishedAt:i.publishedAt,discoveredAt:i.discoveredAt,academicPublishedAt:i.paper?.onlineAt??i.publishedAt??i.paper?.submittedAt??null,paper:i.paper?{workId:i.paper.workId,authors:i.paper.authors,doi:i.paper.doi,arxivId:i.paper.arxivId,status:i.paper.status,arxivVersion:i.paper.arxivVersion,versionAt:i.paper.versionAt,onlineAt:i.paper.onlineAt,submittedAt:i.paper.submittedAt}:null,selected:i.selected,stream:i.contentStream,original:i.links.original});
+const index=publicItems.map(indexRecord);
+await put('data/index.json',JSON.stringify({generatedAt,items:index,candidates:[...candidates.values()].map(indexRecord),cards:cleanCards,memberships},null,2));
 // Machine-readable static snapshots use the same public projection, never private abstracts or bodies.
 for(const [name,mode] of [['papers','paper'],['facilities','news'],['selected',null]]){
- const items=publicItems.filter(i=>mode ? (mode==='paper'?i.contentStream==='paper':i.contentStream!=='paper') : i.selected)
+ const members=new Set(streams[name].items.map(item=>item.id));
+ const items=publicItems.filter(i=>members.has(i.id))
   .map(i=>({...index.find(record=>record.id===i.id),reason:i.reason??null,url:publicOrigin+base+`items/${i.id}/`}));
  await put(`data/${name}.json`,JSON.stringify({schemaVersion:1,generatedAt,count:items.length,items},null,2));
 }
-await put('llms.txt',`# FELTrace\n\n自由电子激光光源与加速器论文和设施资讯索引。当前为静态阅读快照，读取不会触发模型。\n\n- [Agent 接入](${publicOrigin+base}agent/)\n- [论文 JSON](${publicOrigin+base}data/papers.json)\n- [设施资讯 JSON](${publicOrigin+base}data/facilities.json)\n- [精选 JSON](${publicOrigin+base}data/selected.json)\n- [装置参数 JSON](${publicOrigin+base}data/facility-parameters.json)\n- [装置对比](${publicOrigin+base}facilities/compare/)\n- [精选 RSS](${publicOrigin+base}feed.xml)\n\n论文与资讯 JSON 含 schemaVersion、generatedAt、count、items。publishedAt 为原文发表时间（可能未知），discoveredAt 为本站首次收录时间。reason 为精选阅读价值，summary 为中文导读，均非全文笔记。装置参数含 checkedAt、groups、labels、items 和 coverage；逐配置保留资料阶段、版本、定义、工况及官方出处，尚非全球完整目录。请在客户端检索/过滤；此静态站不提供远程 MCP 或 REST 查询服务。请通过原始来源核对，勿推定未提供的论文正文或设施参数。\n`);
-for(const name of ['static.js','static.css'])await put(name,await readFile(path.join(ROOT,'src',name)));
+await put('llms.txt',`# FELTrace\n\n自由电子激光光源与加速器论文和设施资讯索引。当前为静态阅读快照，读取不会触发模型。\n\n- [Agent 接入](${publicOrigin+base}agent/)\n- [论文 JSON](${publicOrigin+base}data/papers.json)\n- [设施资讯 JSON](${publicOrigin+base}data/facilities.json)\n- [精选 JSON](${publicOrigin+base}data/selected.json)\n- [装置参数 JSON](${publicOrigin+base}data/facility-parameters.json)\n- [装置对比](${publicOrigin+base}facilities/compare/)\n- [精选 RSS](${publicOrigin+base}feed.xml)\n\n论文与资讯 JSON 含 schemaVersion、generatedAt、count、items。publishedAt 为原文发表时间（可能未知），discoveredAt 为本站首次收录时间。reason 为精选阅读价值，summary 为中文导读，均非全文笔记。经复核的正文阅读笔记若有，在资料详情页单独展示并注明原文定位及版本，不包含论文全文。装置参数含 checkedAt、groups、labels、items 和 coverage；逐配置保留资料阶段、版本、定义、工况及官方、论文出处、逐条采纳理由，尚非全球完整目录。请在客户端检索/过滤；此静态站不提供远程 MCP 或 REST 查询服务。请通过原始来源核对，勿推定未提供的论文正文或设施参数。\n`);
+const query=await readFile(path.join(ROOT,'src/query.mjs'),'utf8');
+await put('static.js',query.replace(/^export /gm,'')+'\n'+await readFile(path.join(ROOT,'src/static.js'),'utf8'));
+await put('static.css',await readFile(path.join(ROOT,'src/static.css')));
 await put('third-party/KaTeX-LICENSE.txt',await readFile(path.join(ROOT,'licenses','KaTeX-LICENSE.txt')));
-const rssItems=publicItems.filter(i=>i.selected).map(i=>`<item><title>${escaped(i.title)}</title><link>${publicOrigin+base}items/${i.id}/</link><guid>${publicOrigin+base}items/${i.id}/</guid><description>${escaped(i.summary)}</description></item>`).join('');
+const rssItems=streams.selected.items.map(i=>`<item><title>${escaped(i.title)}</title><link>${publicOrigin+base}items/${i.id}/</link><guid>${publicOrigin+base}items/${i.id}/</guid><description>${escaped(i.summary)}</description></item>`).join('');
 await put('feed.xml',`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>FELTrace · 学术精选</title><link>${publicOrigin+base}</link><description>自由电子激光光源与加速器研究索引</description>${rssItems}</channel></rss>`);
 await put('robots.txt',`User-agent: *\nDisallow: ${base}\n`);
 await put('.nojekyll','');
-const report={generatedAt,base,source:'existing public HTTP endpoints',papers:streams.papers.total,facilities:streams.facilities.total,selected:streams.selected.total,pages:extraRoutes.size+7,assets:assetCache.size,assetFailures:failures};
+const degraded=failures.length>0;
+const report={generatedAt,base,source:'existing public HTTP endpoints',papers:streams.papers.total,facilities:streams.facilities.total,selected:streams.selected.total,pages:extraRoutes.size+7,assets:assetCache.size,status:degraded?'degraded':'complete',assetFailures:failures.map(()=>({kind:'asset',code:'unavailable'}))};
+// Detailed URLs, proxy signatures and upstream messages never enter the public directory.
+if(degraded){const diagnostics=path.join(ROOT,'.preview','export-diagnostics',`${Date.now()}-${randomUUID()}.json`);await mkdir(path.dirname(diagnostics),{recursive:true,mode:0o700});await writeFile(diagnostics,JSON.stringify({generatedAt,failures},null,2),{mode:0o600});}
+if(failures.some(f=>requiredAssets.has(f.url)))throw Error('A required stylesheet or stylesheet dependency failed; previous snapshot retained. See private export diagnostics.');
 await put('release.json',JSON.stringify(report,null,2));
 // Preserve the old successful export until the replacement has completed.
-const current=path.join(ROOT,'site'),backup=path.join(ROOT,'.preview','previous');await mkdir(path.dirname(backup),{recursive:true});
+const backup=process.env.FELTRACE_OUTPUT_DIR?current+'.previous':path.join(ROOT,'.preview','previous');await mkdir(path.dirname(backup),{recursive:true});
 try {await stat(current);await rm(backup,{recursive:true,force:true});await rename(current,backup);}catch(e){if(e.code!=='ENOENT')throw e;}
 for(let attempt=0;attempt<10;attempt++){try{await rename(out,current);break;}catch(e){if(!['EPERM','EACCES','EBUSY'].includes(e.code)||attempt===9)throw e;await new Promise(r=>setTimeout(r,500));}}
 console.log(JSON.stringify(report));

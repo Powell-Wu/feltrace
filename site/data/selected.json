@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-12T03:45:06.486Z",
+  "generatedAt": "2026-11-12T02:27:35.341Z",
   "count": 18,
   "items": [
     {
       "id": "nswmqetqjwbecehh6vi3afeh8",
       "title": "用于S³FEL的连续波光阴极甚高频电子枪研制",
       "originalTitle": "Development of a continuous-wave photocathode very-high-frequency electron gun for $\\rm S^3FEL$",
-      "summary": "清华大学为深圳超导软X射线自由电子激光（S³FEL）设施研制了一台谐振频率216.667 MHz的甚高频（VHF）电子枪，在SHINE枪设计基础上优化腔体轮廓，在相近输入功率下获得更高的阴极电场梯度和加速电压，并改善了二次电子倍增性能。",
+      "summary": "如何在相近射频功率下提高连续波电子枪的加速电压，同时控制倍增和热失谐？清华大学作者团队以 SHINE/DALS 枪为基线，为 S³FEL 优化腔型、阴极塞及水冷结构。该 arXiv v1 预印本报告：在 82 kW 连续波射频测试中，用冷测品质因数和输入功率缩放设计结果，推得枪电压 856 kV、阴极梯度 29.9 MV/m；出口法拉第筒测得暗电流 6.8 nA。文中结合电磁、倍增和热分析解释设计取舍，并展示冷测、老炼及闭环稳定性结果。需区分模拟、缩放推算与直接测量；温度图和相邻正文还存在 75/82 kW 的功率标注差异。本文支持对枪体射频运行表现的判断，尚不能据此确认光电子束发射度或半导体阴极寿命。",
       "source": "arXiv · FEL",
       "tags": [
         "论文/研究",
@@ -18,7 +18,9 @@
       "category": "paper",
       "publishedAt": "2026-10-06T01:46:40.000Z",
       "discoveredAt": "2026-10-08T02:05:48.686Z",
+      "academicPublishedAt": "2026-10-06T01:46:40.000Z",
       "paper": {
+        "workId": "d82aa0cf-33ca-4cd2-bb79-ae3662aa101e",
         "authors": [
           "Lianmin Zheng",
           "Yitong Duan",
@@ -36,12 +38,17 @@
           "Yingchao Du"
         ],
         "doi": null,
-        "arxivId": "2610.07604"
+        "arxivId": "2610.07604",
+        "status": "preprint",
+        "arxivVersion": 1,
+        "versionAt": "2026-10-06T01:46:40.000Z",
+        "onlineAt": null,
+        "submittedAt": "2026-10-06T01:46:40.000Z"
       },
       "selected": true,
       "stream": "paper",
       "original": "https://arxiv.org/abs/2610.07604v1",
-      "reason": "常温连续波电子枪选型时，值得对照腔形、阴极附近冷却与暗电流之间的设计取舍；本文提供完成高功率老练的器件案例，可用于比较SHINE枪型的改进，不能据此推定整套注入器的束流性能。",
+      "reason": "适合连续波光阴极枪和高重频注入器设计者。优先读第 2 节的几何与倍增对照、第 5 节的水流分配、调谐和电压缩放：可借鉴的是射频效率、暗电流、热失谐的协同优化及验收方法，而不是直接套用某个最高性能数值。束流品质和阴极寿命需另有测试。",
       "url": "https://powell-wu.github.io/feltrace/items/nswmqetqjwbecehh6vi3afeh8/"
     },
     {
@@ -60,7 +67,9 @@
       "category": "paper",
       "publishedAt": "2026-09-25T17:08:20.000Z",
       "discoveredAt": "2026-09-30T14:21:17.056Z",
+      "academicPublishedAt": "2026-09-25T17:08:20.000Z",
       "paper": {
+        "workId": "a915ad90-e0de-4e2f-be6d-4f7d82c18e11",
         "authors": [
           "E. A. Schneidmiller",
           "S. Serkez",
@@ -102,7 +111,12 @@
           "W. Decking"
         ],
         "doi": null,
-        "arxivId": "2609.31534"
+        "arxivId": "2609.31534",
+        "status": "preprint",
+        "arxivVersion": 1,
+        "versionAt": "2026-09-25T17:08:20.000Z",
+        "onlineAt": null,
+        "submittedAt": "2026-09-25T17:08:20.000Z"
       },
       "selected": true,
       "stream": "paper",
@@ -125,7 +139,9 @@
       "category": "methods",
       "publishedAt": "2026-09-16T00:00:00.000Z",
       "discoveredAt": "2026-09-30T10:43:23.832Z",
+      "academicPublishedAt": "2026-09-16T00:00:00.000Z",
       "paper": {
+        "workId": "490dcaca-4e0f-4db4-9c7c-c0d82628f80a",
         "authors": [
           "Langeveld, W.",
           "Rowen, M.",
@@ -149,7 +165,12 @@
           "Zhu, D."
         ],
         "doi": "10.1107/s1600577526008647",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-09-16T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -172,7 +193,9 @@
       "category": "paper",
       "publishedAt": "2026-09-10T21:44:12.000Z",
       "discoveredAt": "2026-10-08T02:05:48.703Z",
+      "academicPublishedAt": "2026-09-10T21:44:12.000Z",
       "paper": {
+        "workId": "d2fbdae2-969b-4d7d-be45-7732342b0b31",
         "authors": [
           "T. Konomi",
           "T. Xu",
@@ -209,7 +232,12 @@
           "J. Lewellen"
         ],
         "doi": null,
-        "arxivId": "2609.12233"
+        "arxivId": "2609.12233",
+        "status": "preprint",
+        "arxivVersion": 2,
+        "versionAt": "2026-10-02T17:08:40.000Z",
+        "onlineAt": null,
+        "submittedAt": "2026-09-10T21:44:12.000Z"
       },
       "selected": true,
       "stream": "paper",
@@ -233,7 +261,9 @@
       "category": "paper",
       "publishedAt": "2026-08-31T10:00:00.000Z",
       "discoveredAt": "2026-09-30T10:43:21.204Z",
+      "academicPublishedAt": "2026-08-31T10:00:00.000Z",
       "paper": {
+        "workId": "f692c827-bd66-4ce4-9ba9-7a956b5f1c07",
         "authors": [
           "Hanxiang Yang",
           "Nanshun Huang",
@@ -249,7 +279,12 @@
           "Haixiao Deng"
         ],
         "doi": "10.1103/p15j-3dmy",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-08-31T10:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -273,12 +308,19 @@
       "category": "paper",
       "publishedAt": "2026-05-21T10:00:00.000Z",
       "discoveredAt": "2026-10-01T10:43:34.988Z",
+      "academicPublishedAt": "2026-05-21T10:00:00.000Z",
       "paper": {
+        "workId": "09c398f9-9d81-4b4a-8dd0-d1040e2f9eda",
         "authors": [
           "Najmeh Mirian"
         ],
         "doi": "10.1103/125b-9d15",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-05-21T10:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -301,7 +343,9 @@
       "category": "paper",
       "publishedAt": "2026-05-08T10:00:00.000Z",
       "discoveredAt": "2026-10-01T10:43:35.012Z",
+      "academicPublishedAt": "2026-05-08T10:00:00.000Z",
       "paper": {
+        "workId": "59e12957-8bf2-40ba-b76a-e0ffd7bb691d",
         "authors": [
           "H. Tünnermann",
           "Y. Chen",
@@ -324,7 +368,12 @@
           "M. Scholz"
         ],
         "doi": "10.1103/kk2s-s43l",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-05-08T10:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -348,7 +397,9 @@
       "category": "paper",
       "publishedAt": "2025-12-23T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:40:02.803Z",
+      "academicPublishedAt": "2025-12-23T00:00:00.000Z",
       "paper": {
+        "workId": "d341ade5-d800-4f2f-af74-ffa1f0ce9bc8",
         "authors": [
           "Wenxiang Hu",
           "Gabriel Aeppli",
@@ -371,7 +422,12 @@
           "Eduard Prat"
         ],
         "doi": "10.1103/wn8d-l7sh",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-12-23T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -395,7 +451,9 @@
       "category": "paper",
       "publishedAt": "2025-05-01T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:12.991Z",
+      "academicPublishedAt": "2025-05-01T00:00:00.000Z",
       "paper": {
+        "workId": "bd5aeef1-5bb8-4275-9ad6-c19f18c32298",
         "authors": [
           "Philip Heimann",
           "Oliver Alexander",
@@ -415,7 +473,12 @@
           "William Schlotter"
         ],
         "doi": "10.1088/1742-6596/3010/1/012100",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -439,7 +502,9 @@
       "category": "paper",
       "publishedAt": "2025-03-12T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:13.030Z",
+      "academicPublishedAt": "2025-03-12T00:00:00.000Z",
       "paper": {
+        "workId": "cd9eae55-0af0-483a-b588-b6b73b810847",
         "authors": [
           "Mikhail Krasilnikov",
           "Zakaria Aboulbanine",
@@ -478,7 +543,12 @@
           "Heinz-Dieter Nuhn"
         ],
         "doi": "10.1103/physrevaccelbeams.28.030701",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-03-12T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -501,7 +571,9 @@
       "category": "paper",
       "publishedAt": "2024-10-23T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:20.852Z",
+      "academicPublishedAt": "2024-10-23T00:00:00.000Z",
       "paper": {
+        "workId": "a57193c4-43bf-4265-a35e-b35061160af5",
         "authors": [
           "M. Trovo",
           "A. Milocco",
@@ -512,7 +584,12 @@
           "R. Zennaro"
         ],
         "doi": "10.18429/jacow-linac2024-mopb032",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -537,7 +614,9 @@
       "category": "paper",
       "publishedAt": "2024-08-09T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:40:03.056Z",
+      "academicPublishedAt": "2024-08-09T00:00:00.000Z",
       "paper": {
+        "workId": "d3abc06b-e141-49f7-98b4-a93da407d14e",
         "authors": [
           "Christoph Kittel",
           "Antoine Sarracini",
@@ -557,7 +636,12 @@
           "Kirsten Schnorr"
         ],
         "doi": "10.1107/s1600577524006325",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2024-08-09T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -582,7 +666,9 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-09-30T15:48:27.915Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "8a5fa973-8d30-4097-bd34-7cb90caf9a6f",
         "authors": [
           "M. Krasilnikov",
           "Z. Aboulbanine",
@@ -633,7 +719,12 @@
           "H. Nuhn"
         ],
         "doi": "10.18429/jacow-fel2022-moa08",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -656,7 +747,9 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-09-30T15:48:27.971Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "bdb63f6d-acfb-46c2-81a8-07da04de64cf",
         "authors": [
           "S. Khan",
           "A. Brynes",
@@ -674,7 +767,12 @@
           "G. De Ninno"
         ],
         "doi": "10.18429/jacow-fel2022-mop01",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -698,7 +796,9 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-10-08T02:05:45.702Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "d19c6de9-bf32-491e-81f2-bbf7f2a22090",
         "authors": [
           "C. Vicario",
           "C. Arrell",
@@ -712,7 +812,12 @@
           "A. Lutman"
         ],
         "doi": "10.18429/jacow-fel2022-mop53",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -735,14 +840,21 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-10-08T02:05:45.682Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "6f9af8d0-e922-4252-88a7-84827b8a84d4",
         "authors": [
           "P. Dijkstal",
           "E. Prat",
           "S. Reiche"
         ],
         "doi": "10.18429/jacow-fel2022-mop51",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -766,14 +878,21 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-10-08T02:05:45.221Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "c7b4741d-5c27-4371-997b-07d24d034a20",
         "authors": [
           "N. Huang",
           "H. Deng",
           "J. Yan"
         ],
         "doi": "10.18429/jacow-fel2022-mop21",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -797,7 +916,9 @@
       "category": "paper",
       "publishedAt": "2021-10-11T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.757Z",
+      "academicPublishedAt": "2021-10-11T00:00:00.000Z",
       "paper": {
+        "workId": "dbfa9ea1-60ae-4a60-b1af-0035010fd6f5",
         "authors": [
           "Eduard Prat",
           "Eugenio Ferrari",
@@ -807,7 +928,12 @@
           "Thomas Schmidt"
         ],
         "doi": "10.1063/5.0064934",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2021-10-11T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",

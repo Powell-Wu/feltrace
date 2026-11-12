@@ -1,11 +1,12 @@
 {
-  "generatedAt": "2026-10-12T03:45:06.486Z",
+  "generatedAt": "2026-11-12T02:27:35.341Z",
   "base": "/feltrace/",
   "source": "existing public HTTP endpoints",
-  "papers": 104,
-  "facilities": 16,
+  "papers": 100,
+  "facilities": 18,
   "selected": 18,
-  "pages": 194,
+  "pages": 201,
   "assets": 89,
+  "status": "complete",
   "assetFailures": []
 }

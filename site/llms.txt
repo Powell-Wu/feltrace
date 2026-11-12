@@ -10,4 +10,4 @@
 - [装置对比](https://powell-wu.github.io/feltrace/facilities/compare/)
 - [精选 RSS](https://powell-wu.github.io/feltrace/feed.xml)
 
-论文与资讯 JSON 含 schemaVersion、generatedAt、count、items。publishedAt 为原文发表时间（可能未知），discoveredAt 为本站首次收录时间。reason 为精选阅读价值，summary 为中文导读，均非全文笔记。装置参数含 checkedAt、groups、labels、items 和 coverage；逐配置保留资料阶段、版本、定义、工况及官方出处，尚非全球完整目录。请在客户端检索/过滤；此静态站不提供远程 MCP 或 REST 查询服务。请通过原始来源核对，勿推定未提供的论文正文或设施参数。
+论文与资讯 JSON 含 schemaVersion、generatedAt、count、items。publishedAt 为原文发表时间（可能未知），discoveredAt 为本站首次收录时间。reason 为精选阅读价值，summary 为中文导读，均非全文笔记。经复核的正文阅读笔记若有，在资料详情页单独展示并注明原文定位及版本，不包含论文全文。装置参数含 checkedAt、groups、labels、items 和 coverage；逐配置保留资料阶段、版本、定义、工况及官方、论文出处、逐条采纳理由，尚非全球完整目录。请在客户端检索/过滤；此静态站不提供远程 MCP 或 REST 查询服务。请通过原始来源核对，勿推定未提供的论文正文或设施参数。

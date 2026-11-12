@@ -1,13 +1,54 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-12T03:45:06.486Z",
-  "count": 104,
+  "generatedAt": "2026-11-12T02:27:35.341Z",
+  "count": 100,
   "items": [
+    {
+      "id": "ts2nabj74rcjqsrsoomwisr7e",
+      "title": "面向欧洲XFEL真空离子泵的数据驱动预测性维护",
+      "originalTitle": "Towards data-driven predictive maintenance for vacuum ion pumps at European XFEL",
+      "summary": "针对欧洲XFEL真空离子泵的早期故障检测，研究采用支持向量机与卷积神经网络对多台离子泵的压力数据进行分类，并针对故障样本稀少的不平衡问题引入代价敏感学习与SMOTE。所开发系统F1-score达80%，显著自动化了故障识别流程，减少了人工投入。",
+      "source": "Journal of Synchrotron Radiation",
+      "tags": [
+        "论文/研究",
+        "控制/优化",
+        "设施运行",
+        "European XFEL"
+      ],
+      "category": "paper",
+      "publishedAt": "2026-10-08T00:00:00.000Z",
+      "discoveredAt": "2026-10-10T03:51:04.225Z",
+      "academicPublishedAt": "2026-10-08T00:00:00.000Z",
+      "paper": {
+        "workId": "6cad26ab-bee0-4495-8007-f57df4aca473",
+        "authors": [
+          "Majid, A.",
+          "Petrich, M.",
+          "Dommach, M.",
+          "Aplin, S.",
+          "Maalej, W.",
+          "Gelisio, L.",
+          "de Lima, D.F."
+        ],
+        "doi": "10.1107/s1600577526009197",
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-10-08T00:00:00.000Z",
+        "submittedAt": null
+      },
+      "selected": false,
+      "stream": "paper",
+      "original": "https://journals.iucr.org/paper?ret5006",
+      "reason": null,
+      "url": "https://powell-wu.github.io/feltrace/items/ts2nabj74rcjqsrsoomwisr7e/"
+    },
     {
       "id": "nswmqetqjwbecehh6vi3afeh8",
       "title": "用于S³FEL的连续波光阴极甚高频电子枪研制",
       "originalTitle": "Development of a continuous-wave photocathode very-high-frequency electron gun for $\\rm S^3FEL$",
-      "summary": "清华大学为深圳超导软X射线自由电子激光（S³FEL）设施研制了一台谐振频率216.667 MHz的甚高频（VHF）电子枪，在SHINE枪设计基础上优化腔体轮廓，在相近输入功率下获得更高的阴极电场梯度和加速电压，并改善了二次电子倍增性能。",
+      "summary": "如何在相近射频功率下提高连续波电子枪的加速电压，同时控制倍增和热失谐？清华大学作者团队以 SHINE/DALS 枪为基线，为 S³FEL 优化腔型、阴极塞及水冷结构。该 arXiv v1 预印本报告：在 82 kW 连续波射频测试中，用冷测品质因数和输入功率缩放设计结果，推得枪电压 856 kV、阴极梯度 29.9 MV/m；出口法拉第筒测得暗电流 6.8 nA。文中结合电磁、倍增和热分析解释设计取舍，并展示冷测、老炼及闭环稳定性结果。需区分模拟、缩放推算与直接测量；温度图和相邻正文还存在 75/82 kW 的功率标注差异。本文支持对枪体射频运行表现的判断，尚不能据此确认光电子束发射度或半导体阴极寿命。",
       "source": "arXiv · FEL",
       "tags": [
         "论文/研究",
@@ -18,7 +59,9 @@
       "category": "paper",
       "publishedAt": "2026-10-06T01:46:40.000Z",
       "discoveredAt": "2026-10-08T02:05:48.686Z",
+      "academicPublishedAt": "2026-10-06T01:46:40.000Z",
       "paper": {
+        "workId": "d82aa0cf-33ca-4cd2-bb79-ae3662aa101e",
         "authors": [
           "Lianmin Zheng",
           "Yitong Duan",
@@ -36,12 +79,17 @@
           "Yingchao Du"
         ],
         "doi": null,
-        "arxivId": "2610.07604"
+        "arxivId": "2610.07604",
+        "status": "preprint",
+        "arxivVersion": 1,
+        "versionAt": "2026-10-06T01:46:40.000Z",
+        "onlineAt": null,
+        "submittedAt": "2026-10-06T01:46:40.000Z"
       },
       "selected": true,
       "stream": "paper",
       "original": "https://arxiv.org/abs/2610.07604v1",
-      "reason": "常温连续波电子枪选型时，值得对照腔形、阴极附近冷却与暗电流之间的设计取舍；本文提供完成高功率老练的器件案例，可用于比较SHINE枪型的改进，不能据此推定整套注入器的束流性能。",
+      "reason": "适合连续波光阴极枪和高重频注入器设计者。优先读第 2 节的几何与倍增对照、第 5 节的水流分配、调谐和电压缩放：可借鉴的是射频效率、暗电流、热失谐的协同优化及验收方法，而不是直接套用某个最高性能数值。束流品质和阴极寿命需另有测试。",
       "url": "https://powell-wu.github.io/feltrace/items/nswmqetqjwbecehh6vi3afeh8/"
     },
     {
@@ -60,7 +108,9 @@
       "category": "paper",
       "publishedAt": "2026-09-29T10:00:00.000Z",
       "discoveredAt": "2026-09-30T14:21:17.748Z",
+      "academicPublishedAt": "2026-09-29T10:00:00.000Z",
       "paper": {
+        "workId": "e301bf89-59cf-491c-a6fd-2d4f72c0f597",
         "authors": [
           "Songyu Zhu",
           "Yushan Zeng",
@@ -70,7 +120,12 @@
           "Ruxin Li"
         ],
         "doi": "10.1103/k2cg-484h",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-09-29T10:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -92,13 +147,20 @@
       "category": "paper",
       "publishedAt": "2026-09-28T13:28:47.000Z",
       "discoveredAt": "2026-09-30T14:21:16.844Z",
+      "academicPublishedAt": "2026-09-28T13:28:47.000Z",
       "paper": {
+        "workId": "0b1f4521-9059-4fc1-9d79-7386889a1dbd",
         "authors": [
           "Giorgio Visentin",
           "Agapi Emmanouilidou"
         ],
         "doi": null,
-        "arxivId": "2609.35144"
+        "arxivId": "2609.35144",
+        "status": "preprint",
+        "arxivVersion": 2,
+        "versionAt": "2026-09-29T09:35:18.000Z",
+        "onlineAt": null,
+        "submittedAt": "2026-09-28T13:28:47.000Z"
       },
       "selected": false,
       "stream": "paper",
@@ -122,7 +184,9 @@
       "category": "paper",
       "publishedAt": "2026-09-25T17:08:20.000Z",
       "discoveredAt": "2026-09-30T14:21:17.056Z",
+      "academicPublishedAt": "2026-09-25T17:08:20.000Z",
       "paper": {
+        "workId": "a915ad90-e0de-4e2f-be6d-4f7d82c18e11",
         "authors": [
           "E. A. Schneidmiller",
           "S. Serkez",
@@ -164,7 +228,12 @@
           "W. Decking"
         ],
         "doi": null,
-        "arxivId": "2609.31534"
+        "arxivId": "2609.31534",
+        "status": "preprint",
+        "arxivVersion": 1,
+        "versionAt": "2026-09-25T17:08:20.000Z",
+        "onlineAt": null,
+        "submittedAt": "2026-09-25T17:08:20.000Z"
       },
       "selected": true,
       "stream": "paper",
@@ -188,7 +257,9 @@
       "category": "paper",
       "publishedAt": "2026-09-25T10:00:00.000Z",
       "discoveredAt": "2026-09-30T10:43:21.170Z",
+      "academicPublishedAt": "2026-09-25T10:00:00.000Z",
       "paper": {
+        "workId": "ef3bd6a7-fdd7-41f1-b9dd-df5ea076e2fa",
         "authors": [
           "Weihang Liu",
           "Yu Zhao",
@@ -198,7 +269,12 @@
           "Sheng Wang"
         ],
         "doi": "10.1103/6gc2-41zw",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-09-25T10:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -223,7 +299,9 @@
       "category": "paper",
       "publishedAt": "2026-09-25T00:00:00.000Z",
       "discoveredAt": "2026-10-03T02:59:37.715Z",
+      "academicPublishedAt": "2026-09-25T00:00:00.000Z",
       "paper": {
+        "workId": "3115991f-293a-4d2e-bcda-4196c3b3f306",
         "authors": [
           "Jenny Morgan",
           "Nicholas Sudar",
@@ -231,7 +309,12 @@
           "Agostino Marinelli"
         ],
         "doi": "10.1103/g653-qmwq",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-09-25T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -254,7 +337,9 @@
       "category": "paper",
       "publishedAt": "2026-09-23T10:00:00.000Z",
       "discoveredAt": "2026-09-30T14:21:17.910Z",
+      "academicPublishedAt": "2026-09-23T10:00:00.000Z",
       "paper": {
+        "workId": "5bb9dd06-ad5f-4e3d-ada7-e7ef0e939ec8",
         "authors": [
           "Jing Li",
           "Yuhan Jiang",
@@ -263,7 +348,12 @@
           "Yunquan Liu"
         ],
         "doi": "10.1103/rpst-tkh7",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-09-23T10:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -286,7 +376,9 @@
       "category": "methods",
       "publishedAt": "2026-09-16T00:00:00.000Z",
       "discoveredAt": "2026-09-30T10:43:23.832Z",
+      "academicPublishedAt": "2026-09-16T00:00:00.000Z",
       "paper": {
+        "workId": "490dcaca-4e0f-4db4-9c7c-c0d82628f80a",
         "authors": [
           "Langeveld, W.",
           "Rowen, M.",
@@ -310,7 +402,12 @@
           "Zhu, D."
         ],
         "doi": "10.1107/s1600577526008647",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-09-16T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -333,7 +430,9 @@
       "category": "paper",
       "publishedAt": "2026-09-10T21:44:12.000Z",
       "discoveredAt": "2026-10-08T02:05:48.703Z",
+      "academicPublishedAt": "2026-09-10T21:44:12.000Z",
       "paper": {
+        "workId": "d2fbdae2-969b-4d7d-be45-7732342b0b31",
         "authors": [
           "T. Konomi",
           "T. Xu",
@@ -370,7 +469,12 @@
           "J. Lewellen"
         ],
         "doi": null,
-        "arxivId": "2609.12233"
+        "arxivId": "2609.12233",
+        "status": "preprint",
+        "arxivVersion": 2,
+        "versionAt": "2026-10-02T17:08:40.000Z",
+        "onlineAt": null,
+        "submittedAt": "2026-09-10T21:44:12.000Z"
       },
       "selected": true,
       "stream": "paper",
@@ -394,13 +498,20 @@
       "category": "paper",
       "publishedAt": "2026-09-10T17:32:59.000Z",
       "discoveredAt": "2026-10-01T14:21:23.744Z",
+      "academicPublishedAt": "2026-09-10T17:32:59.000Z",
       "paper": {
+        "workId": "2ddc2050-2e34-47f7-a8eb-58bf5146ca9d",
         "authors": [
           "Dmitry Bazyl",
           "Igor Zagorodnov"
         ],
         "doi": null,
-        "arxivId": "2609.11844"
+        "arxivId": "2609.11844",
+        "status": "preprint",
+        "arxivVersion": 1,
+        "versionAt": "2026-09-10T17:32:59.000Z",
+        "onlineAt": null,
+        "submittedAt": "2026-09-10T17:32:59.000Z"
       },
       "selected": false,
       "stream": "paper",
@@ -423,13 +534,20 @@
       "category": "paper",
       "publishedAt": "2026-09-10T10:00:00.000Z",
       "discoveredAt": "2026-09-30T14:21:17.933Z",
+      "academicPublishedAt": "2026-09-10T10:00:00.000Z",
       "paper": {
+        "workId": "505e9129-eb44-40e0-b075-62be93f1915e",
         "authors": [
           "H. B. Crispin",
           "N. Talebi"
         ],
         "doi": "10.1103/skds-z6c5",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-09-10T10:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -453,14 +571,21 @@
       "category": "paper",
       "publishedAt": "2026-09-09T10:00:00.000Z",
       "discoveredAt": "2026-09-30T10:43:21.187Z",
+      "academicPublishedAt": "2026-09-09T10:00:00.000Z",
       "paper": {
+        "workId": "4984ad9f-3d1b-4446-ab05-78f347ed0bab",
         "authors": [
           "Kazuaki Togawa",
           "Hirokazu Maesaka",
           "Vitaliy Goryashko"
         ],
         "doi": "10.1103/3x73-lc4f",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-09-09T10:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -483,7 +608,9 @@
       "category": "paper",
       "publishedAt": "2026-09-07T01:33:14.000Z",
       "discoveredAt": "2026-10-01T14:21:23.767Z",
+      "academicPublishedAt": "2026-09-07T01:33:14.000Z",
       "paper": {
+        "workId": "cf3166c6-410c-40c8-89cf-ed13e327da52",
         "authors": [
           "Minrui Wei",
           "Zeyu Liu",
@@ -494,7 +621,12 @@
           "Weijie Hua"
         ],
         "doi": null,
-        "arxivId": "2609.06916"
+        "arxivId": "2609.06916",
+        "status": "preprint",
+        "arxivVersion": 1,
+        "versionAt": "2026-09-07T01:33:14.000Z",
+        "onlineAt": null,
+        "submittedAt": "2026-09-07T01:33:14.000Z"
       },
       "selected": false,
       "stream": "paper",
@@ -517,7 +649,9 @@
       "category": "paper",
       "publishedAt": "2026-09-06T05:55:31.000Z",
       "discoveredAt": "2026-10-01T14:21:23.774Z",
+      "academicPublishedAt": "2026-09-06T05:55:31.000Z",
       "paper": {
+        "workId": "75873f5c-9129-4339-b84f-0303a4311948",
         "authors": [
           "Z. Y. Zhang",
           "J. F. Zhu",
@@ -528,7 +662,12 @@
           "W. Q. Zhang"
         ],
         "doi": "10.18429/jacow-srf2025-thp78",
-        "arxivId": "2609.06407"
+        "arxivId": "2609.06407",
+        "status": "preprint",
+        "arxivVersion": 1,
+        "versionAt": "2026-09-06T05:55:31.000Z",
+        "onlineAt": null,
+        "submittedAt": "2026-09-06T05:55:31.000Z"
       },
       "selected": false,
       "stream": "paper",
@@ -552,7 +691,9 @@
       "category": "paper",
       "publishedAt": "2026-08-31T10:00:00.000Z",
       "discoveredAt": "2026-09-30T10:43:21.204Z",
+      "academicPublishedAt": "2026-08-31T10:00:00.000Z",
       "paper": {
+        "workId": "f692c827-bd66-4ce4-9ba9-7a956b5f1c07",
         "authors": [
           "Hanxiang Yang",
           "Nanshun Huang",
@@ -568,7 +709,12 @@
           "Haixiao Deng"
         ],
         "doi": "10.1103/p15j-3dmy",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-08-31T10:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -578,20 +724,22 @@
     },
     {
       "id": "q952j3m1c833ktylybafhc9dd",
-      "title": "高亮度超快电子源中的集体与表面电荷效应",
+      "title": "高亮度超快电子源中的集体电荷效应与表面电荷效应",
       "originalTitle": "Collective and surface charge effects in high-brightness ultrafast electron sources",
-      "summary": "作者针对未来对撞机（如FCC-ee）所需的高亮度高电荷光阴极注入器，研究了超快光照下由光阴极表面场效应直接导致的电荷产生限制。多数计算代码因影响较小而忽略光阴极注入器中的肖特基效应，但作者指出这类表面场效应在此类应用中变得显著。作者将微观势垒动力学与宏观空间场及电荷效应自洽耦合，建立的新模型能捕捉复杂的集体动力学，同时保持极高的计算效率，可支持实时模拟与注入器调谐。",
+      "summary": "作者提出基于Fowler-DuBridge方程的光电发射模型，通过引入随时间变化的光阴极表面法向有效电场（含发射实时感生电场），描述高电荷密度电子束团发射过程中肖特基势垒的超快瞬态调制，从而把单电子光电发射效应与宏观集体电荷效应联系起来，用于预测高亮度光阴极注入器的时变电荷产生。",
       "source": "Physical Review Accelerators and Beams",
       "tags": [
         "论文/研究",
-        "理论/模拟",
         "电子束",
-        "加速器/RF"
+        "实验方法",
+        "理论/模拟"
       ],
       "category": "paper",
       "publishedAt": "2026-06-29T10:00:00.000Z",
       "discoveredAt": "2026-10-01T10:43:34.936Z",
+      "academicPublishedAt": "2026-06-29T10:00:00.000Z",
       "paper": {
+        "workId": "c8a0ab05-4e23-4f64-bc3f-922d6889522d",
         "authors": [
           "Anahita Omoumi",
           "Miguel M. Calderon",
@@ -600,7 +748,12 @@
           "Eduardo Granados"
         ],
         "doi": "10.1103/c5zh-6xsv",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-06-29T10:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -624,12 +777,19 @@
       "category": "paper",
       "publishedAt": "2026-05-21T10:00:00.000Z",
       "discoveredAt": "2026-10-01T10:43:34.988Z",
+      "academicPublishedAt": "2026-05-21T10:00:00.000Z",
       "paper": {
+        "workId": "09c398f9-9d81-4b4a-8dd0-d1040e2f9eda",
         "authors": [
           "Najmeh Mirian"
         ],
         "doi": "10.1103/125b-9d15",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-05-21T10:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -653,7 +813,9 @@
       "category": "paper",
       "publishedAt": "2026-05-20T10:00:00.000Z",
       "discoveredAt": "2026-10-01T10:43:34.999Z",
+      "academicPublishedAt": "2026-05-20T10:00:00.000Z",
       "paper": {
+        "workId": "5eb3300c-28f4-4e1a-b58b-fe6b6f6c00fd",
         "authors": [
           "Bo Peng",
           "Yang Wan",
@@ -662,7 +824,12 @@
           "Wei Lu"
         ],
         "doi": "10.1103/ksms-1x6l",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-05-20T10:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -685,7 +852,9 @@
       "category": "paper",
       "publishedAt": "2026-05-08T10:00:00.000Z",
       "discoveredAt": "2026-10-01T10:43:35.012Z",
+      "academicPublishedAt": "2026-05-08T10:00:00.000Z",
       "paper": {
+        "workId": "59e12957-8bf2-40ba-b76a-e0ffd7bb691d",
         "authors": [
           "H. Tünnermann",
           "Y. Chen",
@@ -708,7 +877,12 @@
           "M. Scholz"
         ],
         "doi": "10.1103/kk2s-s43l",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-05-08T10:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -731,7 +905,9 @@
       "category": "paper",
       "publishedAt": "2026-04-22T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:12.151Z",
+      "academicPublishedAt": "2026-04-22T00:00:00.000Z",
       "paper": {
+        "workId": "38b3f7ef-41aa-4985-9079-c99871fa57c3",
         "authors": [
           "Zhen-Yu Ma",
           "Meng Zhang",
@@ -766,7 +942,12 @@
           "Zhen-Tang Zhao"
         ],
         "doi": "10.1103/pn2z-r58r",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-04-22T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -790,7 +971,9 @@
       "category": "paper",
       "publishedAt": "2026-04-15T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:12.697Z",
+      "academicPublishedAt": "2026-04-15T00:00:00.000Z",
       "paper": {
+        "workId": "25e29488-86a9-4cc5-be30-1bfef50cc000",
         "authors": [
           "Chuan Yang",
           "Yixuan Liu",
@@ -799,7 +982,12 @@
           "Weiqing Zhang"
         ],
         "doi": "10.1103/cw2t-yvwd",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2026-04-15T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -823,7 +1011,9 @@
       "category": "paper",
       "publishedAt": "2025-12-23T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:40:02.803Z",
+      "academicPublishedAt": "2025-12-23T00:00:00.000Z",
       "paper": {
+        "workId": "d341ade5-d800-4f2f-af74-ffa1f0ce9bc8",
         "authors": [
           "Wenxiang Hu",
           "Gabriel Aeppli",
@@ -846,7 +1036,12 @@
           "Eduard Prat"
         ],
         "doi": "10.1103/wn8d-l7sh",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-12-23T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -870,7 +1065,9 @@
       "category": "paper",
       "publishedAt": "2025-12-14T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:12.727Z",
+      "academicPublishedAt": "2025-12-14T00:00:00.000Z",
       "paper": {
+        "workId": "9f89cdad-c095-45fa-8af7-f36ad936af98",
         "authors": [
           "Angel T. Garcia-Esparza",
           "Jinkyu Lim",
@@ -896,7 +1093,12 @@
           "Roberto Alonso-Mori"
         ],
         "doi": "10.1021/photonsci.5c00024",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-12-14T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -918,14 +1120,21 @@
       "category": "paper",
       "publishedAt": "2025-12-02T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:13.072Z",
+      "academicPublishedAt": "2025-12-02T00:00:00.000Z",
       "paper": {
+        "workId": "9efdcbdd-c8f8-4b52-a7c1-c34d5f3d8b0e",
         "authors": [
           "Dominik Kraus",
           "Thomas R. Preston",
           "Ulf Zastrau"
         ],
         "doi": "10.1038/s42254-025-00893-7",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-12-02T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -949,12 +1158,19 @@
       "category": "paper",
       "publishedAt": "2025-11-05T00:00:00.000Z",
       "discoveredAt": "2026-10-03T02:59:28.908Z",
+      "academicPublishedAt": "2025-11-05T00:00:00.000Z",
       "paper": {
+        "workId": "fe851337-973b-4f36-9f39-356cfd7548dc",
         "authors": [
           "G. Stupakov"
         ],
         "doi": "10.18429/jacow-ipac2025-mopb108",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -978,7 +1194,9 @@
       "category": "paper",
       "publishedAt": "2025-11-05T00:00:00.000Z",
       "discoveredAt": "2026-10-03T02:59:28.787Z",
+      "academicPublishedAt": "2025-11-05T00:00:00.000Z",
       "paper": {
+        "workId": "706b4b53-e165-414b-8fd0-8aeafd80cf76",
         "authors": [
           "K. Peetermans",
           "F. Lemery",
@@ -990,7 +1208,12 @@
           "M. Ivanyan"
         ],
         "doi": "10.18429/jacow-ipac2025-mopb105",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1015,7 +1238,9 @@
       "category": "paper",
       "publishedAt": "2025-11-05T00:00:00.000Z",
       "discoveredAt": "2026-10-03T02:59:28.320Z",
+      "academicPublishedAt": "2025-11-05T00:00:00.000Z",
       "paper": {
+        "workId": "b124fcab-54d4-4806-83d1-6810160c2991",
         "authors": [
           "J. Hirschman",
           "R. Robles",
@@ -1048,7 +1273,12 @@
           "B. Mencer"
         ],
         "doi": "10.18429/jacow-ipac2025-mopb040",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1072,7 +1302,9 @@
       "category": "paper",
       "publishedAt": "2025-11-04T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:12.885Z",
+      "academicPublishedAt": "2025-11-04T00:00:00.000Z",
       "paper": {
+        "workId": "573a8bc9-d4e8-4b0f-b190-13796fb066ed",
         "authors": [
           "Zhen Zhang",
           "Jingyi Tang",
@@ -1080,7 +1312,12 @@
           "Zhirong Huang"
         ],
         "doi": "10.1103/8lml-cckn",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-11-04T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1104,7 +1341,9 @@
       "category": "paper",
       "publishedAt": "2025-09-27T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:12.906Z",
+      "academicPublishedAt": "2025-09-27T00:00:00.000Z",
       "paper": {
+        "workId": "5a86a6c3-048c-44fb-98b4-ee9a9633ceb9",
         "authors": [
           "Nora Berrah",
           "James Cryan",
@@ -1114,7 +1353,12 @@
           "Philip Bucksbaum"
         ],
         "doi": "10.1364/aop.540527",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-09-27T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1139,14 +1383,21 @@
       "category": "paper",
       "publishedAt": "2025-09-26T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:12.927Z",
+      "academicPublishedAt": "2025-09-26T00:00:00.000Z",
       "paper": {
+        "workId": "076cd3f5-3f50-46b2-bfb4-1c92a002843d",
         "authors": [
           "Zhen Zhang",
           "Yuantao Ding",
           "Feng Zhou"
         ],
         "doi": "10.1103/zz4w-tvxt",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-09-26T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1170,7 +1421,9 @@
       "category": "paper",
       "publishedAt": "2025-09-11T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:13.090Z",
+      "academicPublishedAt": "2025-09-11T00:00:00.000Z",
       "paper": {
+        "workId": "7112472b-9420-4b56-984b-9dd904b08cb4",
         "authors": [
           "C. Davut",
           "O. Apsimon",
@@ -1182,7 +1435,12 @@
           "P. H. Williams"
         ],
         "doi": "10.1103/rjns-vqzt",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-09-11T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1205,7 +1463,9 @@
       "category": "paper",
       "publishedAt": "2025-08-13T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:13.197Z",
+      "academicPublishedAt": "2025-08-13T00:00:00.000Z",
       "paper": {
+        "workId": "8e92cce0-50ca-45f2-9488-c24774e7e292",
         "authors": [
           "Jenny Morgan",
           "Primož Rebernik Ribič",
@@ -1222,7 +1482,12 @@
           "Erik Hemsing"
         ],
         "doi": "10.1038/s41566-025-01737-7",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-08-13T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1244,7 +1509,9 @@
       "category": "paper",
       "publishedAt": "2025-08-08T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:12.961Z",
+      "academicPublishedAt": "2025-08-08T00:00:00.000Z",
       "paper": {
+        "workId": "c5b92d5e-03f6-4dde-a01a-75f75f34b417",
         "authors": [
           "H. Sandberg",
           "P. King",
@@ -1255,7 +1522,12 @@
           "A. Dragone"
         ],
         "doi": "10.1088/1748-0221/20/08/p08019",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-08-08T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1267,7 +1539,7 @@
       "id": "v2vojhad90v2fq8jj2ansi6tp",
       "title": "利用X射线自由电子激光成像光诱导分子消除反应",
       "originalTitle": "Imaging a light-induced molecular elimination reaction with an X-ray free-electron laser",
-      "summary": "",
+      "summary": "研究人员利用X射线自由电子激光对光诱导分子消除反应进行了成像研究。相关成果发表于Nat. Commun. 16（2025），DOI为10.1038/s41467-025-62274-z。",
       "source": "LCLS publications (latest two years)",
       "tags": [
         "论文/研究",
@@ -1278,7 +1550,9 @@
       "category": "paper",
       "publishedAt": "2025-07-30T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:13.214Z",
+      "academicPublishedAt": "2025-07-30T00:00:00.000Z",
       "paper": {
+        "workId": "a73ba4e4-ef59-43dd-89d8-c7064c1fdd1d",
         "authors": [
           "Xiang Li",
           "Rebecca Boll",
@@ -1311,7 +1585,12 @@
           "Artem Rudenko"
         ],
         "doi": "10.1038/s41467-025-62274-z",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-07-30T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1334,7 +1613,9 @@
       "category": "paper",
       "publishedAt": "2025-07-07T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:13.252Z",
+      "academicPublishedAt": "2025-07-07T00:00:00.000Z",
       "paper": {
+        "workId": "61527696-d760-4756-b057-ae9f96ab9c65",
         "authors": [
           "Nicholas J. Hartley",
           "James Baxter",
@@ -1352,7 +1633,12 @@
           "Siegfried H. Glenzer"
         ],
         "doi": "10.1364/optica.560275",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-07-07T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1375,7 +1661,9 @@
       "category": "paper",
       "publishedAt": "2025-06-06T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:12.975Z",
+      "academicPublishedAt": "2025-06-06T00:00:00.000Z",
       "paper": {
+        "workId": "beeb118e-61fa-4af3-aacc-48651cdc70ff",
         "authors": [
           "River Robles",
           "David Cesar",
@@ -1396,7 +1684,12 @@
           "Agostino Marinelli"
         ],
         "doi": "10.1117/12.3058453",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1419,13 +1712,20 @@
       "category": "paper",
       "publishedAt": "2025-05-12T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:13.269Z",
+      "academicPublishedAt": "2025-05-12T00:00:00.000Z",
       "paper": {
+        "workId": "6288ceeb-0ed2-4093-bd12-7db5ec2b5ae0",
         "authors": [
           "Yunhai Cai",
           "Juhao Wu"
         ],
         "doi": "10.1103/physrevaccelbeams.28.050701",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-05-12T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1449,7 +1749,9 @@
       "category": "paper",
       "publishedAt": "2025-05-01T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:12.991Z",
+      "academicPublishedAt": "2025-05-01T00:00:00.000Z",
       "paper": {
+        "workId": "bd5aeef1-5bb8-4275-9ad6-c19f18c32298",
         "authors": [
           "Philip Heimann",
           "Oliver Alexander",
@@ -1469,7 +1771,12 @@
           "William Schlotter"
         ],
         "doi": "10.1088/1742-6596/3010/1/012100",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -1492,7 +1799,9 @@
       "category": "paper",
       "publishedAt": "2025-05-01T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:38.697Z",
+      "academicPublishedAt": "2025-05-01T00:00:00.000Z",
       "paper": {
+        "workId": "bcc89b3b-3f94-4f8b-a63f-3a5f7b09d95f",
         "authors": [
           "R Follath",
           "U H Wagner",
@@ -1500,7 +1809,12 @@
           "U Flechsig"
         ],
         "doi": "10.1088/1742-6596/3010/1/012083",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1510,20 +1824,22 @@
     },
     {
       "id": "opl0j1f9k1vrcnv24c25e03ya",
-      "title": "在X射线自由电子激光上以逐发模式开展稀溶液金属酶X射线吸收谱研究",
+      "title": "X射线自由电子激光逐发模式下的稀释金属酶X射线吸收谱",
       "originalTitle": "X-ray absorption spectroscopy of dilute metalloenzymes at X-ray free-electron lasers in a shot-by-shot mode",
-      "summary": "",
+      "summary": "作者提出一种在X射线自由电子激光（XFEL）上以逐发、无损模式对稀释生物样品进行operando X射线吸收谱（XAS）的新方法，并用光系统II的Mn簇和光系统I的Fe-S中心的K边XAS谱验证了可行性。",
       "source": "SwissFEL publications",
       "tags": [
         "论文/研究",
         "实验方法",
-        "用户科学",
-        "SwissFEL"
+        "诊断",
+        "光子束"
       ],
       "category": "paper",
       "publishedAt": "2025-04-07T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.045Z",
+      "academicPublishedAt": "2025-04-07T00:00:00.000Z",
       "paper": {
+        "workId": "39bcca40-c084-43d1-a2e5-c8df61583ff0",
         "authors": [
           "Isabel Bogacz",
           "Erzsi Szilagyi",
@@ -1562,7 +1878,12 @@
           "Junko Yano"
         ],
         "doi": "10.1021/acs.jpclett.5c00399",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-04-07T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1585,7 +1906,9 @@
       "category": "paper",
       "publishedAt": "2025-04-01T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:12.823Z",
+      "academicPublishedAt": "2025-04-01T00:00:00.000Z",
       "paper": {
+        "workId": "68188609-4b26-43d5-8ec3-2bd6d053ac72",
         "authors": [
           "Zane Taylor",
           "Tharun Reddy",
@@ -1623,57 +1946,18 @@
           "Leora Dresselhaus-Marais"
         ],
         "doi": "10.1107/s1600577525001675",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-04-01T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
       "original": "https://doi.org/10.1107/s1600577525001675",
       "reason": null,
       "url": "https://powell-wu.github.io/feltrace/items/i1tdmookns1yhg2s2l1bm0j39/"
-    },
-    {
-      "id": "x6qsdzuczufslbcxtm58sxtrv",
-      "title": "利用Fresh-Slice自由电子激光实现阿秒X射线脉冲的时频谱整形",
-      "originalTitle": "Spectrotemporal Shaping of Attosecond X-Ray Pulses with a Fresh-Slice Free-Electron Laser",
-      "summary": "",
-      "source": "LCLS publications (latest two years)",
-      "tags": [
-        "论文/研究",
-        "脉冲/阿秒",
-        "光子束",
-        "LCLS"
-      ],
-      "category": "paper",
-      "publishedAt": "2025-03-21T00:00:00.000Z",
-      "discoveredAt": "2026-09-30T14:19:13.012Z",
-      "paper": {
-        "authors": [
-          "River R. Robles",
-          "Kirk A. Larsen",
-          "David Cesar",
-          "Taran Driver",
-          "Joseph Duris",
-          "Paris Franz",
-          "Douglas Garratt",
-          "Veronica Guo",
-          "Gabriel Just",
-          "Randy Lemons",
-          "Ming-Fu Lin",
-          "Razib Obaid",
-          "Nicholas Sudar",
-          "Jun Wang",
-          "Zhen Zhang",
-          "James Cryan",
-          "Agostino Marinelli"
-        ],
-        "doi": "10.1103/physrevlett.134.115001",
-        "arxivId": null
-      },
-      "selected": false,
-      "stream": "paper",
-      "original": "https://doi.org/10.1103/physrevlett.134.115001",
-      "reason": null,
-      "url": "https://powell-wu.github.io/feltrace/items/x6qsdzuczufslbcxtm58sxtrv/"
     },
     {
       "id": "nx0vosov1mjjj4x18xolsy6gp",
@@ -1691,7 +1975,9 @@
       "category": "paper",
       "publishedAt": "2025-03-12T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:13.030Z",
+      "academicPublishedAt": "2025-03-12T00:00:00.000Z",
       "paper": {
+        "workId": "cd9eae55-0af0-483a-b588-b6b73b810847",
         "authors": [
           "Mikhail Krasilnikov",
           "Zakaria Aboulbanine",
@@ -1730,7 +2016,12 @@
           "Heinz-Dieter Nuhn"
         ],
         "doi": "10.1103/physrevaccelbeams.28.030701",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-03-12T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -1753,7 +2044,9 @@
       "category": "paper",
       "publishedAt": "2025-03-04T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:12.844Z",
+      "academicPublishedAt": "2025-03-04T00:00:00.000Z",
       "paper": {
+        "workId": "ccffbc33-b4cd-4544-9aa5-e3157c72c51c",
         "authors": [
           "Eric Galtier",
           "Hae Ja Lee",
@@ -1785,7 +2078,12 @@
           "Bob Nagler"
         ],
         "doi": "10.1038/s41598-025-91989-8",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-03-04T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1808,7 +2106,9 @@
       "category": "paper",
       "publishedAt": "2025-02-25T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:12.864Z",
+      "academicPublishedAt": "2025-02-25T00:00:00.000Z",
       "paper": {
+        "workId": "a913c6ca-8710-49be-a7dc-8c5cfcde884a",
         "authors": [
           "Ichiro Inoue",
           "Takahiro Sato",
@@ -1834,7 +2134,12 @@
           "Jumpei Yamada"
         ],
         "doi": "10.1364/optica.554954",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2025-02-25T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1858,12 +2163,19 @@
       "category": "paper",
       "publishedAt": "2024-10-23T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:20.864Z",
+      "academicPublishedAt": "2024-10-23T00:00:00.000Z",
       "paper": {
+        "workId": "e1a3c10a-8389-4fea-996a-9f59f4542b6a",
         "authors": [
           "A. Brachmann"
         ],
         "doi": "10.18429/jacow-linac2024-thza001",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1886,7 +2198,9 @@
       "category": "paper",
       "publishedAt": "2024-10-23T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:20.852Z",
+      "academicPublishedAt": "2024-10-23T00:00:00.000Z",
       "paper": {
+        "workId": "a57193c4-43bf-4265-a35e-b35061160af5",
         "authors": [
           "M. Trovo",
           "A. Milocco",
@@ -1897,7 +2211,12 @@
           "R. Zennaro"
         ],
         "doi": "10.18429/jacow-linac2024-mopb032",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -1921,7 +2240,9 @@
       "category": "paper",
       "publishedAt": "2024-10-23T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:20.859Z",
+      "academicPublishedAt": "2024-10-23T00:00:00.000Z",
       "paper": {
+        "workId": "9ea31b78-b0c5-45f4-aa30-f901aecb7bdd",
         "authors": [
           "Y. Sumitomo",
           "T. Kubota",
@@ -1931,7 +2252,12 @@
           "Y. Hayakawa"
         ],
         "doi": "10.18429/jacow-linac2024-tupb095",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1955,7 +2281,9 @@
       "category": "paper",
       "publishedAt": "2024-10-23T00:00:00.000Z",
       "discoveredAt": "2026-09-30T14:19:20.876Z",
+      "academicPublishedAt": "2024-10-23T00:00:00.000Z",
       "paper": {
+        "workId": "a895118b-a2b2-4ce3-8cd2-91000c8b3c0f",
         "authors": [
           "R. Margraf-O'Neal",
           "J. Power",
@@ -1963,7 +2291,12 @@
           "P. Piot"
         ],
         "doi": "10.18429/jacow-linac2024-thpb005",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -1988,7 +2321,9 @@
       "category": "paper",
       "publishedAt": "2024-08-09T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:40:03.056Z",
+      "academicPublishedAt": "2024-08-09T00:00:00.000Z",
       "paper": {
+        "workId": "d3abc06b-e141-49f7-98b4-a93da407d14e",
         "authors": [
           "Christoph Kittel",
           "Antoine Sarracini",
@@ -2008,7 +2343,12 @@
           "Kirsten Schnorr"
         ],
         "doi": "10.1107/s1600577524006325",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2024-08-09T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -2031,7 +2371,9 @@
       "category": "methods",
       "publishedAt": "2023-10-06T00:00:00.000Z",
       "discoveredAt": "2026-10-03T02:59:35.608Z",
+      "academicPublishedAt": "2023-10-06T00:00:00.000Z",
       "paper": {
+        "workId": "3efa7499-a780-42ad-93c3-1e36b61b7ef0",
         "authors": [
           "N. Welke",
           "N. Majernik",
@@ -2049,7 +2391,12 @@
           "C. Pellegrini"
         ],
         "doi": "10.1063/5.0168125",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2023-10-06T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2071,7 +2418,9 @@
       "category": "paper",
       "publishedAt": "2023-09-20T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.345Z",
+      "academicPublishedAt": "2023-09-20T00:00:00.000Z",
       "paper": {
+        "workId": "460cdb6c-d3e7-4c86-8bfd-996dcb4b57f5",
         "authors": [
           "Melissa Carrillo",
           "Thomas J. Mason",
@@ -2083,7 +2432,12 @@
           "Celestino Padeste"
         ],
         "doi": "10.1107/s2052252523007595",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2023-09-20T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2106,14 +2460,21 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-09-30T15:48:27.954Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "70dfa94f-a765-4521-aecc-5db7fbdeedd3",
         "authors": [
           "B. Schaap",
           "J. Luiten",
           "S. Schouwenaars"
         ],
         "doi": "10.18429/jacow-fel2022-moco3",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2137,7 +2498,9 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-10-08T02:05:45.857Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "a46b7af8-b957-40ba-9940-2c9df06a5352",
         "authors": [
           "M. Ruijter",
           "A. Bacci",
@@ -2150,7 +2513,12 @@
           "S. Samsam"
         ],
         "doi": "10.18429/jacow-fel2022-tuco4",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2175,7 +2543,9 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-09-30T15:48:27.915Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "8a5fa973-8d30-4097-bd34-7cb90caf9a6f",
         "authors": [
           "M. Krasilnikov",
           "Z. Aboulbanine",
@@ -2226,13 +2596,110 @@
           "H. Nuhn"
         ],
         "doi": "10.18429/jacow-fel2022-moa08",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
       "original": "https://doi.org/10.18429/jacow-fel2022-moa08",
       "reason": "调试高电荷THz FEL时，值得关注空间电荷主导束流与强垂直聚焦波荡器的匹配程序，并用增益曲线判断是否进入饱和；本文可作首光调试参考，证据对应当时的启动配置。",
       "url": "https://powell-wu.github.io/feltrace/items/umfjbgvj8i422r180hqnc4oro/"
+    },
+    {
+      "id": "ujgaofzawwea5b6v801tyipfh",
+      "title": "PITZ THz FEL 种子方案模拟研究",
+      "originalTitle": "Simulations of Seeding Options for THz FEL at PITZ",
+      "summary": "针对PITZ正在准备的THz FEL，模拟比较了外部激光脉冲、预群聚电子束、能量调制电子束和附加短尖峰四种种子方案。这些方案旨在替代SASE以改善相干性和逐发稳定性，模拟评估了各方案在THz脉冲能量、光谱和时间稳定性上相对SASE的改进。",
+      "source": "JACoW FEL 2022 proceedings",
+      "tags": [
+        "论文/研究",
+        "理论/模拟",
+        "种子/相干性",
+        "THz/红外",
+        "European XFEL"
+      ],
+      "category": "paper",
+      "publishedAt": "2023-07-13T00:00:00.000Z",
+      "discoveredAt": "2026-10-08T02:05:46.325Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
+      "paper": {
+        "workId": "5b637f2e-70de-40a8-9afc-bc2d6cf38ded",
+        "authors": [
+          "G. Georgiev",
+          "P. Boonpornprasert",
+          "M. Krasilnikov",
+          "X. Li",
+          "W. Hillert"
+        ],
+        "doi": "10.18429/jacow-fel2022-tup40",
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
+      },
+      "selected": false,
+      "stream": "paper",
+      "original": "https://doi.org/10.18429/jacow-fel2022-tup40",
+      "reason": null,
+      "url": "https://powell-wu.github.io/feltrace/items/ujgaofzawwea5b6v801tyipfh/"
+    },
+    {
+      "id": "ubp0w8fil0zezu9iu4ll5v7qz",
+      "title": "种子FEL与SASE FEL并行运行的首次演示",
+      "originalTitle": "First Demonstration of Parallel Operation of a Seeded FEL and a SASE FEL",
+      "summary": "FLASH利用现有实验种子硬件完成原理验证实验，演示了种子FEL与SASE FEL同时运行的可能性。FLASH的超导直线加速器以10 Hz脉冲串、MHz重复频率驱动两条FEL束线，而适合SASE与种子运行的电子束相空间差异很大。作者描述了实验与加速器装置，并讨论了该实验种子硬件的机遇与限制及其对FLASH2020+项目的影响。",
+      "source": "JACoW FEL 2022 proceedings",
+      "tags": [
+        "论文/研究",
+        "种子/相干性",
+        "设施运行",
+        "FLASH"
+      ],
+      "category": "paper",
+      "publishedAt": "2023-07-13T00:00:00.000Z",
+      "discoveredAt": "2026-10-08T02:05:46.351Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
+      "paper": {
+        "workId": "b08f5907-2429-45ba-a89e-61c8b64f0dd9",
+        "authors": [
+          "S. Ackermann",
+          "M. Kazemi",
+          "S. Hartwell",
+          "L. Schaper",
+          "M. Vogt",
+          "S. Schreiber",
+          "P. Amstutz",
+          "E. Ferrari",
+          "G. Paraskaki",
+          "J. Roensch-Schulenburg",
+          "F. Christie",
+          "P. Niknejadi",
+          "S. Mahmoodi",
+          "A. Thiel",
+          "D. Samoilenko",
+          "W. Hillert",
+          "F. Pannek",
+          "E. Allaria"
+        ],
+        "doi": "10.18429/jacow-fel2022-tup41",
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
+      },
+      "selected": false,
+      "stream": "paper",
+      "original": "https://doi.org/10.18429/jacow-fel2022-tup41",
+      "reason": null,
+      "url": "https://powell-wu.github.io/feltrace/items/ubp0w8fil0zezu9iu4ll5v7qz/"
     },
     {
       "id": "rog96szhigk6omv3vcpn34uep",
@@ -2248,7 +2715,9 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-10-08T02:05:46.251Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "60802453-5888-4bea-b55f-ed863a439188",
         "authors": [
           "D. Dunning",
           "J. Clarke",
@@ -2260,7 +2729,12 @@
           "J. Marangos"
         ],
         "doi": "10.18429/jacow-fel2022-tup32",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2283,12 +2757,19 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-10-08T02:05:45.772Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "a8b7c7b1-ac4b-48fd-8850-e26650254c42",
         "authors": [
           "K. Kawase"
         ],
         "doi": "10.18429/jacow-fel2022-mop63",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2311,7 +2792,9 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-09-30T15:48:27.971Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "bdb63f6d-acfb-46c2-81a8-07da04de64cf",
         "authors": [
           "S. Khan",
           "A. Brynes",
@@ -2329,7 +2812,12 @@
           "G. De Ninno"
         ],
         "doi": "10.18429/jacow-fel2022-mop01",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -2353,7 +2841,9 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-10-08T02:05:45.702Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "d19c6de9-bf32-491e-81f2-bbf7f2a22090",
         "authors": [
           "C. Vicario",
           "C. Arrell",
@@ -2367,13 +2857,62 @@
           "A. Lutman"
         ],
         "doi": "10.18429/jacow-fel2022-mop53",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
       "original": "https://doi.org/10.18429/jacow-fel2022-mop53",
       "reason": "为高重复率FEL选择双色方案时，可把逐发切换、两色独立控制和束流损失作为比较重点；本文的激光发射度遮挡案例有助于评估非侵入路线，仍需核对现有注入激光与束流啁啾条件。",
       "url": "https://powell-wu.github.io/feltrace/items/hnqleovnpgity3blduuein8pm/"
+    },
+    {
+      "id": "fkw5cjdddlpei03t86e3kqf7b",
+      "title": "等离子体光阴极注入器超高亮度束流的模拟",
+      "originalTitle": "Simulations of Ultrahigh Brightness Beams from a Plasma Photocathode Injector",
+      "summary": "在PWFA-FEL项目框架下，作者通过模拟表明利用束流加载（beam-loading）可能产生能散降低的超高5D亮度电子束。等离子体光阴极注入器有望从等离子体尾场加速（PWFA）级产生归一化发射度达nm-rad量级的电子束，其kA级峰值电流带来超高5D亮度，但等离子体加速固有的GV/m量级加速梯度导致显著能量啁啾，能啁啾与能散不利于高增益FEL相互作用。",
+      "source": "JACoW FEL 2022 proceedings",
+      "tags": [
+        "论文/研究",
+        "理论/模拟",
+        "电子束",
+        "加速器/RF",
+        "种子/相干性"
+      ],
+      "category": "paper",
+      "publishedAt": "2023-07-13T00:00:00.000Z",
+      "discoveredAt": "2026-10-08T02:05:46.287Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
+      "paper": {
+        "workId": "2188ed9e-3bf9-4016-b428-6e24f4382543",
+        "authors": [
+          "L. Berman",
+          "A. Habib",
+          "T. Heinemann",
+          "G. Manahan",
+          "A. Sutherland",
+          "D. Campbell",
+          "A. Hewitt",
+          "A. Dickson",
+          "B. Hidding"
+        ],
+        "doi": "10.18429/jacow-fel2022-tup35",
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
+      },
+      "selected": false,
+      "stream": "paper",
+      "original": "https://doi.org/10.18429/jacow-fel2022-tup35",
+      "reason": null,
+      "url": "https://powell-wu.github.io/feltrace/items/fkw5cjdddlpei03t86e3kqf7b/"
     },
     {
       "id": "fdlfuldfaiikbjsqprrujk81f",
@@ -2391,7 +2930,9 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-10-08T02:05:45.905Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "419c864f-b42e-403d-be67-de4e915ff947",
         "authors": [
           "M. Krasilnikov",
           "Z. Aboulbanine",
@@ -2437,7 +2978,12 @@
           "J. Ziegler"
         ],
         "doi": "10.18429/jacow-fel2022-tup03",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2460,14 +3006,21 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-10-08T02:05:45.682Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "6f9af8d0-e922-4252-88a7-84827b8a84d4",
         "authors": [
           "P. Dijkstal",
           "E. Prat",
           "S. Reiche"
         ],
         "doi": "10.18429/jacow-fel2022-mop51",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -2491,14 +3044,21 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-10-08T02:05:45.221Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "c7b4741d-5c27-4371-997b-07d24d034a20",
         "authors": [
           "N. Huang",
           "H. Deng",
           "J. Yan"
         ],
         "doi": "10.18429/jacow-fel2022-mop21",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -2522,7 +3082,9 @@
       "category": "paper",
       "publishedAt": "2023-07-13T00:00:00.000Z",
       "discoveredAt": "2026-10-08T02:05:45.475Z",
+      "academicPublishedAt": "2023-07-13T00:00:00.000Z",
       "paper": {
+        "workId": "68ed9393-bc58-4c89-8842-d79bdd7f78b7",
         "authors": [
           "W. Qin",
           "M. Guetg",
@@ -2535,7 +3097,12 @@
           "E. Gjonaj"
         ],
         "doi": "10.18429/jacow-fel2022-mop38",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2544,43 +3111,10 @@
       "url": "https://powell-wu.github.io/feltrace/items/ai9kqkjes0lhxd1klo531jhtq/"
     },
     {
-      "id": "ue8dmq4wo9huvw7ww4debw3lx",
-      "title": "SwissFEL量子物质超快动力学：Furka终端站的能力",
-      "originalTitle": "Ultrafast dynamics in quantum matter at SwissFEL: capabilities of Furka endstation",
-      "summary": "",
-      "source": "SwissFEL publications",
-      "tags": [
-        "论文/研究",
-        "实验方法",
-        "用户科学",
-        "SwissFEL"
-      ],
-      "category": "paper",
-      "publishedAt": "2023-06-09T00:00:00.000Z",
-      "discoveredAt": "2026-09-30T12:55:39.394Z",
-      "paper": {
-        "authors": [
-          "Elia Razzoli",
-          "Hiroki Ueda",
-          "Eugenio Paris",
-          "Biaolong Liu",
-          "Elizabeth Skoropata",
-          "Luc Patthey"
-        ],
-        "doi": "10.1117/12.2668886",
-        "arxivId": null
-      },
-      "selected": false,
-      "stream": "paper",
-      "original": "https://doi.org/10.1117/12.2668886",
-      "reason": null,
-      "url": "https://powell-wu.github.io/feltrace/items/ue8dmq4wo9huvw7ww4debw3lx/"
-    },
-    {
       "id": "f3cbefqm9tkawudpbmkjsubu3",
       "title": "SwissFEL 中利用 PolariX TDS 进行波荡器后束流测量",
       "originalTitle": "Post-undulator beam measurements with PolariX TDS in SwissFEL",
-      "summary": "",
+      "summary": null,
       "source": "SwissFEL publications",
       "tags": [
         "论文/研究",
@@ -2591,7 +3125,9 @@
       "category": "paper",
       "publishedAt": "2023-06-09T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.410Z",
+      "academicPublishedAt": "2023-06-09T00:00:00.000Z",
       "paper": {
+        "workId": "3585f737-f666-44b7-a25a-d2f3a6457a87",
         "authors": [
           "Paolo Craievich",
           "Zheqiao Geng",
@@ -2603,7 +3139,12 @@
           "Eduard Prat"
         ],
         "doi": "10.1117/12.2665447",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2626,7 +3167,9 @@
       "category": "methods",
       "publishedAt": "2023-05-30T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.453Z",
+      "academicPublishedAt": "2023-05-30T00:00:00.000Z",
       "paper": {
+        "workId": "fc1573d0-7c94-4599-b9b4-0ad391f220a1",
         "authors": [
           "Claude Pradervand",
           "Colette Rosenberg",
@@ -2639,7 +3182,12 @@
           "Luc Patthey"
         ],
         "doi": "10.1107/s1600577523004241",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2023-05-30T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2662,7 +3210,9 @@
       "category": "paper",
       "publishedAt": "2023-04-10T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.484Z",
+      "academicPublishedAt": "2023-04-10T00:00:00.000Z",
       "paper": {
+        "workId": "826238e5-0577-4db4-ab1a-f2b95bb8d7ad",
         "authors": [
           "S. Reiche",
           "C. Bacellar",
@@ -2680,7 +3230,12 @@
           "C. David"
         ],
         "doi": "10.1103/physrevresearch.5.l022009",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2023-04-10T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2702,7 +3257,9 @@
       "category": "paper",
       "publishedAt": "2023-02-06T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.539Z",
+      "academicPublishedAt": "2023-02-06T00:00:00.000Z",
       "paper": {
+        "workId": "7623a22e-07d7-4206-b656-de61004a8162",
         "authors": [
           "Frithjof Nolting",
           "Christoph Bostedt",
@@ -2710,7 +3267,12 @@
           "Hans Braun"
         ],
         "doi": "10.1140/epjp/s13360-023-03721-y",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2023-02-06T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2734,13 +3296,20 @@
       "category": "paper",
       "publishedAt": "2022-07-28T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.630Z",
+      "academicPublishedAt": "2022-07-28T00:00:00.000Z",
       "paper": {
+        "workId": "19494706-0f3a-4f3c-a1b6-9ba6fcabf9fd",
         "authors": [
           "Kai Zhang",
           "Marco Calvi"
         ],
         "doi": "10.1088/1361-6668/ac782a",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2022-07-28T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2763,7 +3332,9 @@
       "category": "paper",
       "publishedAt": "2022-05-02T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.660Z",
+      "academicPublishedAt": "2022-05-02T00:00:00.000Z",
       "paper": {
+        "workId": "c40612cf-608e-4122-a7bc-e77c65461300",
         "authors": [
           "Eduard Prat",
           "Philipp Dijkstal",
@@ -2784,7 +3355,12 @@
           "Kirsten Schnorr"
         ],
         "doi": "10.1103/physrevresearch.4.l022025",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2022-05-02T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2808,7 +3384,9 @@
       "category": "paper",
       "publishedAt": "2022-01-07T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.688Z",
+      "academicPublishedAt": "2022-01-07T00:00:00.000Z",
       "paper": {
+        "workId": "1212b503-8ad8-43ec-a422-ebe9238bd368",
         "authors": [
           "Philipp Dijkstal",
           "Alexander Malyzhenkov",
@@ -2821,7 +3399,12 @@
           "Eduard Prat"
         ],
         "doi": "10.1103/physrevresearch.4.013017",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2022-01-07T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2843,7 +3426,9 @@
       "category": "paper",
       "publishedAt": "2021-11-08T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.742Z",
+      "academicPublishedAt": "2021-11-08T00:00:00.000Z",
       "paper": {
+        "workId": "3d3fab01-2fb3-4214-95d4-30894bb21678",
         "authors": [
           "Stephen M. Keable",
           "Adrian Kölsch",
@@ -2894,7 +3479,12 @@
           "Jan Kern"
         ],
         "doi": "10.1038/s41598-021-00236-3",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2021-11-08T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2917,7 +3507,9 @@
       "category": "paper",
       "publishedAt": "2021-10-21T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.770Z",
+      "academicPublishedAt": "2021-10-21T00:00:00.000Z",
       "paper": {
+        "workId": "589d2f41-0c3c-4259-ab5c-28b79a0da19f",
         "authors": [
           "Christian David",
           "Gediminas Seniutinas",
@@ -2931,7 +3523,12 @@
           "Pavle Juranić"
         ],
         "doi": "10.1107/s1600577521009619",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2021-10-21T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -2955,7 +3552,9 @@
       "category": "paper",
       "publishedAt": "2021-10-11T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.757Z",
+      "academicPublishedAt": "2021-10-11T00:00:00.000Z",
       "paper": {
+        "workId": "dbfa9ea1-60ae-4a60-b1af-0035010fd6f5",
         "authors": [
           "Eduard Prat",
           "Eugenio Ferrari",
@@ -2965,7 +3564,12 @@
           "Thomas Schmidt"
         ],
         "doi": "10.1063/5.0064934",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2021-10-11T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": true,
       "stream": "paper",
@@ -2988,7 +3592,9 @@
       "category": "paper",
       "publishedAt": "2021-09-06T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.785Z",
+      "academicPublishedAt": "2021-09-06T00:00:00.000Z",
       "paper": {
+        "workId": "934c02a3-db33-4780-9ba7-0f1adf7a68ef",
         "authors": [
           "S. Bettoni",
           "A. Cavalieri",
@@ -3004,7 +3610,12 @@
           "A. Trisorio"
         ],
         "doi": "10.1017/hpl.2021.36",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2021-09-06T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3027,7 +3638,9 @@
       "category": "paper",
       "publishedAt": "2020-11-09T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.842Z",
+      "academicPublishedAt": "2020-11-09T00:00:00.000Z",
       "paper": {
+        "workId": "7d56bd10-6948-4b46-b405-6729aa7e15ad",
         "authors": [
           "Eduard Prat",
           "Rafael Abela",
@@ -3140,13 +3753,56 @@
           "Elke Zimoch"
         ],
         "doi": "10.1038/s41566-020-00712-8",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2020-11-09T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
       "original": "https://doi.org/10.1038/s41566-020-00712-8",
       "reason": null,
       "url": "https://powell-wu.github.io/feltrace/items/w1l98241atn3h906k8smfggmm/"
+    },
+    {
+      "id": "zjhn019tj054a5gilqyontf63",
+      "title": "能量啁啾多色XFEL脉冲用于蛋白质晶体衍射的时间-能量映射：应用与局限",
+      "originalTitle": "Applications and limits of time-to-energy mapping of protein crystal diffraction using energy-chirped polychromatic XFEL pulses",
+      "summary": null,
+      "source": "SwissFEL publications",
+      "tags": [
+        "论文/研究",
+        "光子束",
+        "实验方法",
+        "SwissFEL"
+      ],
+      "category": "paper",
+      "publishedAt": "2020-04-09T00:00:00.000Z",
+      "discoveredAt": "2026-09-30T12:55:39.908Z",
+      "academicPublishedAt": "2020-04-09T00:00:00.000Z",
+      "paper": {
+        "workId": "ce7db9ce-e8eb-414f-972e-e954d6acb2e9",
+        "authors": [
+          "Alisia Fadini",
+          "Sven Reiche",
+          "Karol Nass",
+          "Jasper J. van Thor"
+        ],
+        "doi": "10.3390/app10072599",
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2020-04-09T00:00:00.000Z",
+        "submittedAt": null
+      },
+      "selected": false,
+      "stream": "paper",
+      "original": "https://doi.org/10.3390/app10072599",
+      "reason": null,
+      "url": "https://powell-wu.github.io/feltrace/items/zjhn019tj054a5gilqyontf63/"
     },
     {
       "id": "fltf5i69006qskinux8ns49dj",
@@ -3163,7 +3819,9 @@
       "category": "paper",
       "publishedAt": "2020-02-21T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.930Z",
+      "academicPublishedAt": "2020-02-21T00:00:00.000Z",
       "paper": {
+        "workId": "24dadaae-2f52-4465-9d66-ce3511144121",
         "authors": [
           "Eduard Prat",
           "Philipp Dijkstal",
@@ -3171,7 +3829,12 @@
           "Sven Reiche"
         ],
         "doi": "10.1103/physrevlett.124.074801",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2020-02-21T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3194,7 +3857,9 @@
       "category": "paper",
       "publishedAt": "2020-02-12T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.920Z",
+      "academicPublishedAt": "2020-02-12T00:00:00.000Z",
       "paper": {
+        "workId": "4f67e0a9-3158-4e46-980c-1d9791d453e5",
         "authors": [
           "S. Bettoni",
           "M. Csatari Divall",
@@ -3208,7 +3873,12 @@
           "V. Goryashko"
         ],
         "doi": "10.1103/physrevaccelbeams.23.024401",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2020-02-12T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3230,7 +3900,9 @@
       "category": "paper",
       "publishedAt": "2019-12-11T00:00:00.000Z",
       "discoveredAt": "2026-09-30T12:55:39.952Z",
+      "academicPublishedAt": "2019-12-11T00:00:00.000Z",
       "paper": {
+        "workId": "977fe9bc-7c56-4676-8ed8-002fe52912d3",
         "authors": [
           "M Calvi",
           "M D Ainslie",
@@ -3244,7 +3916,12 @@
           "K Zhang"
         ],
         "doi": "10.1088/1361-6668/ab5b37",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2019-12-11T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3267,7 +3944,9 @@
       "category": "paper",
       "publishedAt": "2019-12-06T00:00:00.000Z",
       "discoveredAt": "2026-10-03T02:59:33.908Z",
+      "academicPublishedAt": "2019-12-06T00:00:00.000Z",
       "paper": {
+        "workId": "bc47972a-1ef7-424e-a7c2-b5a7d2801134",
         "authors": [
           "E. Prat",
           "P. Dijkstal",
@@ -3283,7 +3962,12 @@
           "T. Schietinger"
         ],
         "doi": "10.1103/physrevlett.123.234801",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2019-12-06T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3306,7 +3990,9 @@
       "category": "paper",
       "publishedAt": "2009-08-28T00:00:00.000Z",
       "discoveredAt": "2026-10-08T02:05:40.429Z",
+      "academicPublishedAt": "2009-08-28T00:00:00.000Z",
       "paper": {
+        "workId": "d547eb20-453d-4420-9b51-174d3d7424a7",
         "authors": [
           "G Lambert",
           "J Gautier",
@@ -3322,7 +4008,12 @@
           "S Sebban"
         ],
         "doi": "10.1088/1367-2630/11/8/083033",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2009-08-28T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3345,7 +4036,9 @@
       "category": "paper",
       "publishedAt": "2009-03-17T00:00:00.000Z",
       "discoveredAt": "2026-10-08T02:05:40.347Z",
+      "academicPublishedAt": "2009-03-17T00:00:00.000Z",
       "paper": {
+        "workId": "187a7eb5-ed20-43d3-b39d-ce17eeb7bf0b",
         "authors": [
           "B. Steffen",
           "V. Arsov",
@@ -3360,44 +4053,18 @@
           "P. Schmüser"
         ],
         "doi": "10.1103/physrevstab.12.032802",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": "2009-03-17T00:00:00.000Z",
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
       "original": "https://doi.org/10.1103/physrevstab.12.032802",
       "reason": null,
       "url": "https://powell-wu.github.io/feltrace/items/sns088dw9s2abr0sx8qfyxshq/"
-    },
-    {
-      "id": "zjhn019tj054a5gilqyontf63",
-      "title": "能量啁啾多色XFEL脉冲用于蛋白质晶体衍射的时间-能量映射：应用与局限",
-      "originalTitle": "Applications and limits of time-to-energy mapping of protein crystal diffraction using energy-chirped polychromatic XFEL pulses",
-      "summary": "",
-      "source": "SwissFEL publications",
-      "tags": [
-        "论文/研究",
-        "光子束",
-        "实验方法",
-        "SwissFEL"
-      ],
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-09-30T12:55:39.908Z",
-      "paper": {
-        "authors": [
-          "Fadini A",
-          "Reiche S",
-          "Nass K",
-          "van Thor JJ"
-        ],
-        "doi": "10.3390/app10072599",
-        "arxivId": null
-      },
-      "selected": false,
-      "stream": "paper",
-      "original": "https://doi.org/10.3390/app10072599",
-      "reason": null,
-      "url": "https://powell-wu.github.io/feltrace/items/zjhn019tj054a5gilqyontf63/"
     },
     {
       "id": "z626owwdkbrbewixot0pjc2d6",
@@ -3413,13 +4080,20 @@
       "category": "paper",
       "publishedAt": null,
       "discoveredAt": "2026-10-08T02:05:40.218Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "11a25bb6-b1fb-4df7-8bea-6e8a3828a51e",
         "authors": [
           "R. Abela",
           "B.D. Patterson"
         ],
         "doi": "10.1016/j.trac.2010.02.012",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3443,7 +4117,9 @@
       "category": "paper",
       "publishedAt": null,
       "discoveredAt": "2026-10-03T02:59:34.920Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "c71667a8-183d-4c72-8b84-885243efdec0",
         "authors": [
           "Schlott V",
           "Arsov V",
@@ -3453,7 +4129,12 @@
           "Dehler M"
         ],
         "doi": "10.18429/jacow-ibic2015-mobla03",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3477,7 +4158,9 @@
       "category": "paper",
       "publishedAt": null,
       "discoveredAt": "2026-10-03T02:59:34.765Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "cdfdf927-2af2-4645-b740-3755fcec477e",
         "authors": [
           "Csatari Divall M",
           "Hauri CP",
@@ -3486,47 +4169,18 @@
           "Trisorio A"
         ],
         "doi": "10.18429/jacow-ibic2016-wepg52",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
       "original": "https://doi.org/10.18429/jacow-ibic2016-wepg52",
       "reason": null,
       "url": "https://powell-wu.github.io/feltrace/items/xd5asfd2o5zveq9zhnzm7cpnp/"
-    },
-    {
-      "id": "txkujrrzyg9roqxxg4egxqj34",
-      "title": "SwissFEL Aramis 束线短周期小间隙波荡器运行经验",
-      "originalTitle": "Experience with short-period, small gap undulators at the SwissFEL Aramis beamline",
-      "summary": "",
-      "source": "SwissFEL publications",
-      "tags": [
-        "论文/研究",
-        "波荡器",
-        "设施运行",
-        "SwissFEL",
-        "JACoW"
-      ],
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-10-03T02:59:33.738Z",
-      "paper": {
-        "authors": [
-          "Schmidt T",
-          "Calvi M",
-          "Kittel C",
-          "Voulot D",
-          "Hiller N",
-          "Schietinger T"
-        ],
-        "doi": "10.18429/jacow-fel2019-wed01",
-        "arxivId": null
-      },
-      "selected": false,
-      "stream": "paper",
-      "original": "https://doi.org/10.18429/jacow-fel2019-wed01",
-      "reason": null,
-      "url": "https://powell-wu.github.io/feltrace/items/txkujrrzyg9roqxxg4egxqj34/"
     },
     {
       "id": "snx541jdm2jejxurkga4sccsn",
@@ -3541,7 +4195,9 @@
       "category": "opinion",
       "publishedAt": null,
       "discoveredAt": "2026-09-30T12:55:39.939Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "f4a9d192-3361-4a20-9aa1-bcf93dc8e376",
         "authors": [
           "Kiyotaka Asakura",
           "Kelly J. Gaffney",
@@ -3549,7 +4205,12 @@
           "Makina Yabashi"
         ],
         "doi": "10.1039/c9cp90304f",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3572,7 +4233,9 @@
       "category": "paper",
       "publishedAt": null,
       "discoveredAt": "2026-10-03T02:59:34.855Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "a1c42bc1-5050-4e05-a550-e2887f6528e4",
         "authors": [
           "Ozkan Loch C",
           "Llorente Sancho D",
@@ -3582,7 +4245,12 @@
           "Schlott V"
         ],
         "doi": "10.18429/jacow-ibic2015-mopb051",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3605,13 +4273,20 @@
       "category": "paper",
       "publishedAt": null,
       "discoveredAt": "2026-10-08T02:05:40.134Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "2edc7d4a-b885-4c23-a552-59794cd7244c",
         "authors": [
           "B. D. Patterson",
           "R. Abela"
         ],
         "doi": "10.1039/c003406a",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3634,7 +4309,9 @@
       "category": "paper",
       "publishedAt": null,
       "discoveredAt": "2026-10-03T02:59:34.999Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "9bbf86ef-2890-4639-8019-9e26a7eebfee",
         "authors": [
           "U. Flechsig",
           "J. Bahrdt",
@@ -3642,7 +4319,12 @@
           "S. Reiche"
         ],
         "doi": "10.1063/1.4952912",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3664,13 +4346,20 @@
       "category": "paper",
       "publishedAt": null,
       "discoveredAt": "2026-10-03T02:59:35.037Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "d78608c1-53a4-4499-9f27-8c41992cf44c",
         "authors": [
           "Martin Paraliev",
           "Christopher Gough"
         ],
         "doi": "10.1109/ipmhvc.2014.7287273",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3682,7 +4371,7 @@
       "id": "hjm4urzhlxxu3887ui7ooj2jx",
       "title": "SwissFEL电荷测量与一种绝对电荷测量方法的结果",
       "originalTitle": "Charge measurements in SwissFEL and results of an absolute charge measurement method",
-      "summary": "",
+      "summary": "针对SwissFEL的电荷测量，研究人员报告了一种绝对电荷测量方法的结果。相关论文收录于国际束流仪器会议（IBIC）论文集，页码341-348。",
       "source": "SwissFEL publications",
       "tags": [
         "论文/研究",
@@ -3694,7 +4383,9 @@
       "category": "paper",
       "publishedAt": null,
       "discoveredAt": "2026-09-30T12:55:39.709Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "d5e7f7e4-4750-40b3-a3a1-f8e815c686ea",
         "authors": [
           "Orlandi GL",
           "Craievich P",
@@ -3704,147 +4395,18 @@
           "Stäger D"
         ],
         "doi": "10.18429/jacow-ibic2021-weob01",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
       "original": "https://doi.org/10.18429/jacow-ibic2021-weob01",
       "reason": null,
       "url": "https://powell-wu.github.io/feltrace/items/hjm4urzhlxxu3887ui7ooj2jx/"
-    },
-    {
-      "id": "g5t58mkhlyc61aojnkewkuq3v",
-      "title": "基于直线加速器的自由电子激光中利用壁电流监测器对皮秒级长束团进行绝对电荷测量",
-      "originalTitle": "Absolute charge measurements for ps-long bunches using a wall current monitor in linac-based free electron lasers",
-      "summary": "",
-      "source": "SwissFEL publications",
-      "tags": [
-        "论文/研究",
-        "诊断",
-        "电子束",
-        "SwissFEL"
-      ],
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-09-30T12:55:39.569Z",
-      "paper": {
-        "authors": [
-          "D. Stäger",
-          "P. Craievich",
-          "M.M. Dehler",
-          "R. Ischebeck",
-          "F. Marcellini",
-          "G.L. Orlandi"
-        ],
-        "doi": "10.1016/j.nima.2022.167709",
-        "arxivId": null
-      },
-      "selected": false,
-      "stream": "paper",
-      "original": "https://doi.org/10.1016/j.nima.2022.167709",
-      "reason": null,
-      "url": "https://powell-wu.github.io/feltrace/items/g5t58mkhlyc61aojnkewkuq3v/"
-    },
-    {
-      "id": "g5lbbleyijpos7skavrig3l6w",
-      "title": "SwissFEL 软 X 射线 FEL 线 Athos 现状",
-      "originalTitle": "Status of Athos, the soft X-ray FEL line of SwissFEL",
-      "summary": "",
-      "source": "SwissFEL publications",
-      "tags": [
-        "论文/研究",
-        "设施动态",
-        "SwissFEL",
-        "光子束",
-        "波荡器"
-      ],
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-10-03T02:59:33.789Z",
-      "paper": {
-        "authors": [
-          "Ganter R",
-          "Aeppli G",
-          "Alex J",
-          "Al Haddad A",
-          "Arrell C",
-          "Arsov V"
-        ],
-        "doi": "10.18429/jacow-fel2019-thp085",
-        "arxivId": null
-      },
-      "selected": false,
-      "stream": "paper",
-      "original": "https://doi.org/10.18429/jacow-fel2019-thp085",
-      "reason": null,
-      "url": "https://powell-wu.github.io/feltrace/items/g5lbbleyijpos7skavrig3l6w/"
-    },
-    {
-      "id": "fypl2qqijs17omjcu038ybeit",
-      "title": "Athos波荡器光束线运行模型",
-      "originalTitle": "Operational model of the Athos undulator beamline",
-      "summary": "",
-      "source": "SwissFEL publications",
-      "tags": [
-        "论文/研究",
-        "波荡器",
-        "设施运行",
-        "SwissFEL",
-        "JACoW"
-      ],
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-10-03T02:59:33.679Z",
-      "paper": {
-        "authors": [
-          "Kittel C",
-          "Calvi M",
-          "Liang X",
-          "Schmidt T",
-          "Sammut NJ"
-        ],
-        "doi": "10.18429/jacow-fel2019-wep097",
-        "arxivId": null
-      },
-      "selected": false,
-      "stream": "paper",
-      "original": "https://doi.org/10.18429/jacow-fel2019-wep097",
-      "reason": null,
-      "url": "https://powell-wu.github.io/feltrace/items/fypl2qqijs17omjcu038ybeit/"
-    },
-    {
-      "id": "f3om1u18eujgne6xhu6ozd5qt",
-      "title": "SwissFEL诊断系统的调试结果与首批运行经验",
-      "originalTitle": "Commissioning results and first operational experience with SwissFEL diagnostics",
-      "summary": "",
-      "source": "SwissFEL publications",
-      "tags": [
-        "论文/研究",
-        "诊断",
-        "设施运行",
-        "SwissFEL",
-        "JACoW"
-      ],
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-10-03T02:59:34.553Z",
-      "paper": {
-        "authors": [
-          "Schlott V",
-          "Arsov V",
-          "Baldinger M",
-          "Baldinger R",
-          "Bonderer G",
-          "Borrelli S"
-        ],
-        "doi": "10.18429/jacow-ibic2017-mopwc03",
-        "arxivId": null
-      },
-      "selected": false,
-      "stream": "paper",
-      "original": "https://doi.org/10.18429/jacow-ibic2017-mopwc03",
-      "reason": null,
-      "url": "https://powell-wu.github.io/feltrace/items/f3om1u18eujgne6xhu6ozd5qt/"
     },
     {
       "id": "dxn5jw8ep4grc0vjygvsgr5fd",
@@ -3861,12 +4423,19 @@
       "category": "paper",
       "publishedAt": null,
       "discoveredAt": "2026-10-03T02:59:34.520Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "fcea51b7-f452-4495-8c91-181152938754",
         "authors": [
           "Schietinger T"
         ],
         "doi": "10.18429/jacow-ipac2018-mozgbd1",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3889,7 +4458,9 @@
       "category": "paper",
       "publishedAt": null,
       "discoveredAt": "2026-10-08T02:05:40.505Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "c2c98e3f-0b56-461e-9644-e96822c27bbb",
         "authors": [
           "Jean-Yves Raguin",
           "Kevin Li",
@@ -3898,7 +4469,12 @@
           "Marco Pedrozzi"
         ],
         "doi": "10.1016/j.nima.2008.04.071",
-        "arxivId": null
+        "arxivId": null,
+        "status": "journal",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -3910,7 +4486,7 @@
       "id": "bpir8pz0r9xvnd7mpoarhkroz",
       "title": "面向SwissFEL快速安全参数调优的贝叶斯优化",
       "originalTitle": "Bayesian optimisation for fast and safe parameter tuning of SwissFEL",
-      "summary": "",
+      "summary": null,
       "source": "SwissFEL publications",
       "tags": [
         "论文/研究",
@@ -3922,7 +4498,9 @@
       "category": "paper",
       "publishedAt": null,
       "discoveredAt": "2026-10-03T02:59:33.759Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "d932df9a-e536-4d64-84a9-0ba2334ddffd",
         "authors": [
           "Kirschner J",
           "Nonnenmacher M",
@@ -3932,46 +4510,18 @@
           "Ischebeck R"
         ],
         "doi": "10.18429/jacow-fel2019-thp061",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
       "original": "https://doi.org/10.18429/jacow-fel2019-thp061",
       "reason": null,
       "url": "https://powell-wu.github.io/feltrace/items/bpir8pz0r9xvnd7mpoarhkroz/"
-    },
-    {
-      "id": "bev3maaxoxfq25jk11dtzi0cz",
-      "title": "Apple X 波荡器的高级运行模型",
-      "originalTitle": "Advanced operational models of the apple X undulator",
-      "summary": "",
-      "source": "SwissFEL publications",
-      "tags": [
-        "论文/研究",
-        "波荡器",
-        "理论/模拟",
-        "SwissFEL",
-        "JACoW"
-      ],
-      "category": "paper",
-      "publishedAt": null,
-      "discoveredAt": "2026-10-03T02:59:33.708Z",
-      "paper": {
-        "authors": [
-          "Liang X",
-          "Calvi M",
-          "Kittel C",
-          "Schmidt T",
-          "Sammut NJ"
-        ],
-        "doi": "10.18429/jacow-fel2019-wep098",
-        "arxivId": null
-      },
-      "selected": false,
-      "stream": "paper",
-      "original": "https://doi.org/10.18429/jacow-fel2019-wep098",
-      "reason": null,
-      "url": "https://powell-wu.github.io/feltrace/items/bev3maaxoxfq25jk11dtzi0cz/"
     },
     {
       "id": "b4p3d7ydsyjd7cp4grw3dr58a",
@@ -3989,7 +4539,9 @@
       "category": "paper",
       "publishedAt": null,
       "discoveredAt": "2026-10-03T02:59:34.490Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "805a66c5-6e90-4c6b-a4e2-a82f4422134f",
         "authors": [
           "Bettoni S",
           "Craievich P",
@@ -3999,7 +4551,12 @@
           "Marcellini F"
         ],
         "doi": "10.18429/jacow-ipac2018-thpak074",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -4021,7 +4578,9 @@
       "category": "paper",
       "publishedAt": null,
       "discoveredAt": "2026-10-03T02:59:34.048Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "e7a57b91-18f2-47a1-aa0a-3555d76303b5",
         "authors": [
           "R. Follath",
           "U. Flechsig",
@@ -4029,7 +4588,12 @@
           "L. Patthey"
         ],
         "doi": "10.1063/1.5084655",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",
@@ -4051,7 +4615,9 @@
       "category": "paper",
       "publishedAt": null,
       "discoveredAt": "2026-10-03T02:59:34.460Z",
+      "academicPublishedAt": null,
       "paper": {
+        "workId": "0f5e2248-2e53-4627-90b1-e6b87c21a4de",
         "authors": [
           "Joehri H",
           "Calvi M",
@@ -4061,7 +4627,12 @@
           "Locher M"
         ],
         "doi": "10.18429/jacow-medsi2018-tuopma03",
-        "arxivId": null
+        "arxivId": null,
+        "status": "conference",
+        "arxivVersion": null,
+        "versionAt": null,
+        "onlineAt": null,
+        "submittedAt": null
       },
       "selected": false,
       "stream": "paper",

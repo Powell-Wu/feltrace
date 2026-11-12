@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "export": "node scripts/export.mjs",
-    "test": "node --test tests/*.test.mjs",
+    "test": "node --test tests/query.test.mjs tests/fixture-export.test.mjs",
+    "test:snapshot": "node --test tests/export.test.mjs",
     "preview": "node scripts/serve.mjs"
   },
   "dependencies": {"cheerio": "1.2.0"},
